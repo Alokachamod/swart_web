@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-secondary">
+<body class="body">
     <header class="header">
         <div class="container">
             <nav>

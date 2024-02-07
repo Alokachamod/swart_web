@@ -1,6 +1,10 @@
+.body {
+    background-color: #292929;
+}
+
 .header {
-    background-color: #17171727;
-    height: 100px;
+    background-color: #5757579f;
+    height: 130px;
     width: 100%;
     border-radius: 10px;
 }

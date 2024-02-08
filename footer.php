@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="col-12">
             <footer class="footer">
-
+            
             </footer>
         </div>
     </div>

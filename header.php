@@ -7,15 +7,25 @@
     <title>SWART INDUSTRIES</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="\resources\profile_for_swart.jpg">
+    <link rel="icon" href="profile for swart.jpg">
 </head>
 
 <body class="body">
     <div class="container-fluid">
+        <div class="col-12">
         <header class="header">
             <img src="swart industries 1.png" class="img1">
-        
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
         </header>
+        </div>
     </div>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

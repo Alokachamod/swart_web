@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="text-center copyright">
-            © 2024 SWART S\INDUSTRIES. All rights reserved.
+            © 2024 SWART INDUSTRIES. All rights reserved.
         </div>
     </footer>
 

@@ -10,7 +10,7 @@
     <link rel="icon" href="profile for swart.jpg">
 </head>
 
-<body class="body">
+<body >
     <div class="container-fluid">
         <div class="col-12">
         <header class="header">

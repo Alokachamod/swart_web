@@ -83,3 +83,9 @@ li a:hover{
 }
 
 /* footer*/
+
+.footer {
+    background-color: #000000c7;
+    height: 100px;
+    width: 100%;
+}

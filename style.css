@@ -3,10 +3,11 @@
 }
 
 .header {
-    background-color: #5757579f;
-    height: 130px;
+    background-color: #fafafa4a;
+    height: 100px;
     width: 100%;
     border-radius: 10px;
+    position: fixed  ;
 }
 
 .img1 {
@@ -15,10 +16,5 @@
     margin-left: 1%;
 }
 
-.searchForm {
-    margin-top: 15px;
 
-}
-.b1 {
-    margin-left: 500px;
-}
+

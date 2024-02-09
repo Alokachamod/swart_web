@@ -20,12 +20,14 @@
 
             </div>
             <div class="col-md-4 col-sm-6 animate-down">
-                <h3 class="mb-3 text-center">Follow Us</h3>
-                <ul class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61556536163654"><img src="" alt=""></a>
-                    <a href="https://www.linkedin.com/company/99349646/admin/feed/posts/">twitter</a>
-                    <a href="#">instagram</a>
-                </ul>
+                <h3 class="mb-3">Follow Us</h3>
+                <div class="sociallink">
+                    <ul>
+                        <a href="https://www.facebook.com/profile.php?id=61556536163654"><img src="icons8-facebook (1).svg" alt="facebook" class="social-icon"></a>
+                        <a href="https://www.linkedin.com/company/99349646/admin/feed/posts/"><img src="icons8-linkedin.svg" alt="linkedin" class="social-icon"></a>
+                        <a href="https://www.instagram.com/swart_industries/"><img src="icons8-instagram.svg" alt="instagram" class="social-icon"></a>
+                    </ul>
+                </div>
 
             </div>
             <div class="col-md-4 col-sm-6 animate-left">

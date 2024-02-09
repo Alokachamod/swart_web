@@ -195,3 +195,12 @@ li a:hover {
     }
 }
 
+.social-icon {
+    
+    gap: 5rem;
+    align-items: center;
+    height: 50px;
+}
+
+
+

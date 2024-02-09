@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profile for swart.jpg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -15,15 +16,15 @@
         <div class="row footer-content">
             <div class="col-md-4 col-sm-6 animate-up">
                 <h3 class="mb-3">SWART INDUSTRIES</h3>
-                <p>Your company description goes here.</p>
+                <p>Swart Industries is on a relentless mission to revolutionize industries and uplift global quality of life through innovative research and development endeavors. Our commitment to pushing scientific and technological boundaries addresses the world's most pressing challenges head-on. With a vision to lead transformative change, particularly in Sri Lanka, we aim to pioneer technological breakthroughs locally while creating sustainable solutions that empower businesses and communities worldwide. Rooted in integrity, collaboration, and excellence, we are dedicated to shaping a brighter tomorrow for all through transformative innovation.</p>
 
             </div>
             <div class="col-md-4 col-sm-6 animate-down">
                 <h3 class="mb-3 text-center">Follow Us</h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#"><i class="bi bi-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="bi bi-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <ul class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61556536163654"><img src="" alt=""></a>
+                    <a href="https://www.linkedin.com/company/99349646/admin/feed/posts/">twitter</a>
+                    <a href="#">instagram</a>
                 </ul>
 
             </div>

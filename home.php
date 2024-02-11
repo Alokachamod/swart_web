@@ -10,7 +10,7 @@
     <link rel="icon" href="profile for swart.jpg">
 </head>
 
-<body class="bg-secondary">
+<body class="bg-DARK">
 
     <?php include 'header.php'; ?>
     <div class="hero-section">

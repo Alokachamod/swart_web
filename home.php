@@ -17,7 +17,7 @@
         <video autoplay loop muted playsinline>
             <source src="swartweb intro.mp4" type="video/mp4">
         </video>
-        <div class="overlay  ">
+        <div class="overlay">
         </div>
     </div>
     <div class="container-fluid">

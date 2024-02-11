@@ -18,14 +18,10 @@
             <source src="swartweb intro.mp4" type="video/mp4">
         </video>
         <div class="overlay  ">
-                    <div class="bt position-absolute top-20 start-0 translate-middle-y">
-                        <h1>SWART INDUSTRIES</h1>
-                        <p class="lead">Where ideas become reality </p>
-                    </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div>
+        <div class="col-12">
 
         </div>
 

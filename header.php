@@ -10,7 +10,7 @@
     <link rel="icon" href="profile for swart.jpg">
 </head>
 
-<body >
+<body class="bg-secondary">
     <div class="container-fluid">
         <div class="col-12">
         <header class="header">
@@ -18,9 +18,10 @@
             <nav>
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
+                    <li><a href="">Upcoming projects</a></li>
+                    <li><a href="">Our products</a></li>
                     <li><a href="">Services</a></li>
-                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">About</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>

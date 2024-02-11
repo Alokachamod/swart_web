@@ -243,5 +243,22 @@ li a:hover {
     margin: 50px;
     font-style: italic;
     color: white;
-   
+
+
+}
+
+.mbody{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.vision{
+    margin: 50px;
+    font-style: italic;
+    color: white;
+    
+
+}
+.vd{
+    margin-top:10%;
 }

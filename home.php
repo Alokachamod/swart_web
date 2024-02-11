@@ -22,8 +22,12 @@
     </div>
     <div class="container-fluid">
         <div class="col-12">
+            <div style="height: 100vh; width: 100vw;">
+                <h1 class="mission">Our Mission </h1>
 
-        </div>
+            </div>
+
+    </div>
 
     </div>
 

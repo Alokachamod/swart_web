@@ -22,7 +22,7 @@
     </div>
     <div class="container-fluid">
         <div class="col-12">
-            <div style="height: 90vh; width: 100vw;">
+            <div style="height: 100vh; width: 100vw;">
                 <div>
                     <h1 class="mission text-center">Our Mission </h1>
                     <div class="col-8 offset-2">

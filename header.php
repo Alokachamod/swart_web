@@ -17,7 +17,7 @@
             <img src="swart industries 1.png" class="img1">
             <nav>
                 <ul>
-                    <li ><a href="">Home</a></li>
+                    <li><a href="">Home</a></li>
                     <li><a href="">Upcoming projects</a></li>
                     <li><a href="">Our products</a></li>
                     <li><a href="">Services</a></li>

@@ -260,3 +260,10 @@ li a:hover {
     
 
 }
+/*mission and visson text */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+

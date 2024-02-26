@@ -23,15 +23,13 @@
     <div class="container-fluid">
         <div class="col-12">
             <div style="height: 100vh; width: 100vw;">
-            <br>
-            <br>
+                
                 <div>
                     <h1 class="mission text-center">Our Mission </h1>
                     <div class="col-8 offset-2">
                         <p class="mbody text-center text-light ">Our mission at Swart Industries is to relentlessly pursue innovation through research and development aimed at revolutionizing industries and improving quality of life globally. We are committed to pushing the boundaries of scientific discovery and technological advancement to address the world's most pressing challenges.</p>
                     </div>
                 </div>
-</br>
                 <div class="19854">
                     <h1 class="vision text-center">Our vision </h1>
                     <div class="col-8 offset-2">

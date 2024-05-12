@@ -1,4 +1,4 @@
-// Include header and footer content dynamically (JavaScript required)
+
 const header = document.querySelector("header[include-src]");
 const footer = document.querySelector("footer[include-src]");
 

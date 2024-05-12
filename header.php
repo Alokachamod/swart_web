@@ -16,7 +16,7 @@
         <header class="header">
             <img src="swart industries 1.png" class="img1">
             <nav>
-                <ul>
+                <ul class="ht">
                     <li><a href="">Home</a></li>
                     <li><a href="">Upcoming projects</a></li>
                     <li><a href="">Our products</a></li>

@@ -11,6 +11,14 @@
 </head>
 
 <body class="bg-secondary">
+    <div class="container-fluid">
+        <div class="col-12">
+        <div style="width: 100vw;">
+        <p class="st"> <a href="" class="stl">Sign in</a> or <a href="" class="stl">Sign up</a></p>
+        </div>
+        </div>
+
+    </div>
 
     <?php include 'header.php'; ?>
     

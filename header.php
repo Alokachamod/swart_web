@@ -37,6 +37,7 @@
                             </li>
                         </ul>
                     </div>
+                    <p class="st"> <a href="" class="stl">Sign in</a> or <a href="" class="stl">Sign up</a></p>
                 </div>
             </nav>
         </div>

@@ -56,6 +56,23 @@ body {
     }
 }
 
+.st {
+    color: white;
+}
+
+.stl {
+    color: rgb(45, 136, 211);
+    text-decoration: none;
+}
+
+.al {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: -15px;
+
+}
 /* footer*/
 
 .animate-up {

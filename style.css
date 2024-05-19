@@ -11,6 +11,19 @@ body {
     /* Needed for pseudo-element */
     transition: text-decoration 0.3s ease;
     /* Smooth transition */
+    
+}
+
+@media (max-width: 990px) {
+    .hover-underline {
+        text-decoration: none;
+        /* Remove default underline */
+        position: relative;
+        /* Needed for pseudo-element */
+        transition: text-decoration 0.3s ease;
+        /* Smooth transition */
+        width: 70px;
+    }
 }
 
 .hover-underline:hover {
@@ -31,6 +44,16 @@ body {
     left: 0;
     transition: all 0.3s ease;
     /* Animate underline appearance */
+}
+
+.img1 {
+    height: 40px;
+}
+
+@media screen and (max-width: 700px) {
+    .img1 {
+        height: 10px;
+    }
 }
 
 /* footer*/
@@ -202,6 +225,7 @@ body {
 .mbody {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+
 }
 
 .vision {
@@ -211,6 +235,8 @@ body {
 
 
 }
+
+.pt {}
 
 
 /*mission and visson text */

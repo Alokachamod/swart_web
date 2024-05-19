@@ -7,25 +7,28 @@
     <title>SWART INDUSTRIES</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="profile for swart.jpg">
+    <link rel="icon" href="resources\profile for swart.jpg">
 </head>
 
 <body class="bg-secondary">
     <div class="container-fluid">
         <div class="col-12">
-        <header class="header">
-            <img src="swart industries 1.png" class="img1">
-            <nav>
-                <ul class="ht">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Upcoming projects</a></li>
-                    <li><a href="">Our products</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </div>
+                    </div>
+                </div>
             </nav>
-        </header>
         </div>
     </div>
     <script src="script.js"></script>

@@ -17,8 +17,8 @@ include "connection.php";
 
   <link rel="stylesheet" href="bootstrap.css" />
   <link rel="stylesheet" href="style.css" />
-
   <link rel="stylesheet" href="swart industries 1.png">
+  
 
 </head>
 

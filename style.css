@@ -36,12 +36,6 @@ body {
     left: 0;
     
 }
-.dropdown-menu .dropdown-item {
-    color: #fff;
-}
-.dropdown-menu .dropdown-item:hover {
-    background-color: #495057;
-}
 
 
 .img1 {
@@ -50,27 +44,11 @@ body {
 
 @media screen and (max-width: 700px) {
     .img1 {
-        height: 10px;
+        height: 20px;
     }
 }
 
-.st {
-    color: white;
-}
 
-.stl {
-    color: rgb(0, 26, 197);
-    text-decoration: none;
-}
-
-.al {
-    position: absolute;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: -15px;
-
-}
 /* footer*/
 
 .animate-up {
@@ -250,8 +228,6 @@ body {
 
 
 }
-
-.pt {}
 
 
 /*mission and visson text */

@@ -11,34 +11,62 @@
 </head>
 
 <body class="bg-secondary">
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="col-12">
+
+            <div>
+                <?php
+                session_start();
+                if (isset($_SESSION["u"])) {
+                    $data = $_SESSION["u"];
+                ?>
+                    <span class="text-Ig-start text-success"><b>Hi </b><?php echo $data["fname"]; ?></span> |
+                    <span class="text-lg-start fw-bold text-danger signout" onclick="signout();">Signout</span> |
+                <?php
+                } else {
+                ?>
+                    <a href="index.php" class="text-decoration-none  fw-bold">Sign In or Register</a> 
+                <?php
+                }
+                ?>
+                <span class="text-lg-start text-light fw-bold">| Help and Contact</span>
+                <a href="index.php" class="text-decoration-none fw-bold offset-8">Admin Sign in</a> 
+
+            </div>
+
             <nav class="navbar navbar-expand-lg bg-secondary border-bottom border-body" data-bs-theme="dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="resources/swart industries 1.png" alt="Bootstrap" height="40px">
+                        <img src="resources/swart industries 1.png" alt="Bootstrap" class="img1">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav offset-6">
+                        <ul class="navbar-nav offset-5">
                             <li class="nav-item">
-                                <a class="nav-link hover-underline" aria-current="page" href="#">Upcoming Project</a>
+                                <a class="nav-link hover-underline" aria-current="page" href="#">Upcoming Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline" href="#">Product</a>
+                                <a class="nav-link hover-underline" href="#">Products</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link hover-underline dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Service 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Service 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Service 3</a></li>
-                                </ul>
+
+                            <li class="nav-item">
+                                <a class="nav-link hover-underline" href="#">Services</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link hover-underline" href="#">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link hover-underline" href="#">Contact Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link hover-underline dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">My profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Cart</a></li>
+                                    <li><a class="dropdown-item" href="#">Wish list</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

@@ -265,7 +265,7 @@ body {
     margin-top: 100px;
 }
 
-.form {
+.card {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -335,11 +335,11 @@ body {
     gap: 6px;
 }
 
-.form label {
+.card label {
     position: relative;
 }
 
-.form label .input {
+.card label .input {
     background-color: #333;
     color: #fff;
     width: 100%;
@@ -349,7 +349,7 @@ body {
     border-radius: 10px;
 }
 
-.form label .input+span {
+.card label .input+span {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
     left: 10px;
@@ -359,13 +359,13 @@ body {
     transition: 0.3s ease;
 }
 
-.form label .input:placeholder-shown+span {
+.card label .input:placeholder-shown+span {
     top: 12.5px;
     font-size: 0.9em;
 }
 
-.form label .input:focus+span,
-.form label .input:valid+span {
+.card label .input:focus+span,
+.card label .input:valid+span {
     color: #00bfff;
     top: 0px;
     font-size: 0.7em;
@@ -403,17 +403,3 @@ body {
     }
 }
 
-@media (max-width: 992px) {
-    .form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 300px;
-        padding: 20px;
-        border-radius: 20px;
-        position: relative;
-        background-color: #1a1a1a;
-        color: #fff;
-        border: 1px solid #333;
-    }
-}

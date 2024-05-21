@@ -32,10 +32,10 @@ include "connection.php";
         <!--content-->
         <div class="col-12 col-lg-6">
           <div class="row">
-            <div class="col-6 d-none  d-lg-block">
+            <div class="col-6 d-none  d-lg-block offset-10">
               <!--signup box-->
-              <div class="col-12  col-lg-6" id="signUpBox"></div>
-              <form class="form ">
+              <div class="col-12  col-lg-12 " id="signUpBox"></div>
+              <div class="card ">
                 <p class="title">Register </p>
               
                 <div class="flex">
@@ -65,12 +65,12 @@ include "connection.php";
                 </label>
                 <button class="submit">Submit</button>
                 <p class="signin">Already have an account ? <a href="#" onclick="changeView();">Signin</a> </p>
-              </form>
+              </div>
             </div>
             <!--sign up--->
             <!--sign in--->
             <div class="col-12" id="signInBox"></div>
-              <form class="form ">
+              <div class="card">
                 <p class="title">Log in </p>
                 
               
@@ -85,8 +85,8 @@ include "connection.php";
                 </label>
                 
                 <button class="submit">Submit</button>
-                <p class="signin">Create a new account <a href="#" onclick="changeView();">Signin</a> </p>
-              </form>
+                <p class="signin">Create a new account <a href="#" onclick="changeView();">Sign up</a> </p>
+              </div>
             </div>
             <!--sign in--->
           </div>

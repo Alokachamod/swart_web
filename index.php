@@ -32,12 +32,12 @@ include "connection.php";
         <!--content-->
         <div class="col-12 col-lg-6">
           <div class="row">
-            <div class="col-6 d-none d-lg-block">
+            <div class="col-6 d-none  d-lg-block">
               <!--signup box-->
-              <div class="col-12  " id="signUpBox"></div>
-              <form class="form col-md-4 ">
+              <div class="col-12  col-lg-6" id="signUpBox"></div>
+              <form class="form ">
                 <p class="title">Register </p>
-                <p class="message">Signup now and get full access to our app. </p>
+              
                 <div class="flex">
                   <label>
                     <input class="input" type="text" placeholder="" required="">
@@ -60,20 +60,41 @@ include "connection.php";
                   <span>Password</span>
                 </label>
                 <label>
-                  <input class="input" type="password" placeholder="" required="">
-                  <span>Confirm password</span>
+                  <input class="input" type="text" placeholder="" required="">
+                  <span>Mobile</span>
                 </label>
                 <button class="submit">Submit</button>
-                <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+                <p class="signin">Already have an account ? <a href="#" onclick="changeView();">Signin</a> </p>
               </form>
             </div>
             <!--sign up--->
+            <!--sign in--->
+            <div class="col-12" id="signInBox"></div>
+              <form class="form ">
+                <p class="title">Log in </p>
+                
+              
+                <label>
+                  <input class="input" type="email" placeholder="" required="">
+                  <span>Email</span>
+                </label>
+
+                <label>
+                  <input class="input" type="password" placeholder="" required="">
+                  <span>Password</span>
+                </label>
+                
+                <button class="submit">Submit</button>
+                <p class="signin">Create a new account <a href="#" onclick="changeView();">Signin</a> </p>
+              </form>
+            </div>
+            <!--sign in--->
           </div>
         </div>
 
       </div>
     </div>
-
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha386-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
 </body>
 

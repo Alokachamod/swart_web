@@ -24,7 +24,7 @@ include "connection.php";
 
     <!-- Sign Up Section -->
     <div class="row justify-content-center" id="signUpBox">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="card p-5">
           <p class="title">Register</p>
           <div class="d-flex justify-content-between">
@@ -66,7 +66,7 @@ include "connection.php";
 
     <!-- Sign In Section -->
     <div class="row justify-content-center d-none" id="signInBox">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="card p-5">
           <p class="title">Log in</p>
           <div class="col-12 mt-3">

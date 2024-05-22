@@ -32,11 +32,12 @@ include "connection.php";
         <div class="card p-5">
           <p class="title">Register</p>
           <div class="d-flex justify-content-between">
-            <div class="form-floating col-6 pe-3">
-              <div class="col-12 d-none" id="msgdiv">
+          <div class="col-12 d-none" id="msgdiv">
                 <div class="alert alert-danger" role="alert" id="msg">
                 </div>
               </div>
+            <div class="form-floating col-6 pe-3">
+              
               <!-- First Name Input -->
               <input type="text" class="form-control" id="fname" placeholder="Aloka">
               <label for="fname">First Name</label>

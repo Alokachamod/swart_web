@@ -20,6 +20,13 @@ include "connection.php";
         <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
       </div>
     </div>
+    <?php
+
+    if (!isset($_COOKIE['email']) or !isset($_COOKIE['password'])) {
+      $_COOKIE['email'] = "";
+      $_COOKIE['password'] = "";
+    }
+    ?>
 
     <!-- Sign Up Section -->
     <div class="row justify-content-center" id="signUpBox">
@@ -84,12 +91,12 @@ include "connection.php";
           <div class="col-12 mt-3">
             <!-- Email Input -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email2" placeholder="aloka@example.com">
+              <input type="email" class="form-control" id="email2" placeholder="aloka@example.com" value="<?php echo $_COOKIE['email']; ?>">
               <label for="floatingInput">Email address</label>
             </div>
             <!-- Password Input -->
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="password2" placeholder="Password">
+              <input type="password" class="form-control" id="password2" placeholder="Password" value="<?php echo $_COOKIE['password']; ?>">
               <label for="floatingPassword">Password</label>
             </div>
             <div class="col-6">

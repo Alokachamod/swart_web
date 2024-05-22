@@ -69,3 +69,22 @@ function signin() {
     request.open("POST", "signInProcess.php", true);
     request.send(form);
 }
+
+
+function signout() {
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "success") {
+                window.location.reload();
+            }
+        }
+    }
+
+    request.open("GET", "signOutProcess.php", true);
+    request.send();
+
+}

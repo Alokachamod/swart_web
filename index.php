@@ -20,23 +20,22 @@ include "connection.php";
         <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
       </div>
     </div>
-    <div class="col-12 d-none" id="msgdiv">
-      <div class="alert alert-danger" role="alert" id="msg">
 
-      </div>
-    </div>
     <!-- Sign Up Section -->
     <div class="row justify-content-center" id="signUpBox">
       <div class="col-12 col-lg-6">
         <div class="card p-5">
           <p class="title">Register</p>
+          <div class="col-12 d-none" id="msgdiv">
+            <div class="alert alert-danger" role="alert" id="msg">
+
+            </div>
+          </div>
           <div class="d-flex justify-content-between">
-          
+
+
             <div class="form-floating col-6 pe-3">
-            <div class="col-12 d-none" id="msgdiv">
-                <div class="alert alert-danger" role="alert" id="msg">
-                </div>
-              </div>
+
               <!-- First Name Input -->
               <input type="text" class="form-control" id="fname" placeholder="Aloka">
               <label for="fname">First Name</label>
@@ -77,6 +76,11 @@ include "connection.php";
       <div class="col-12 col-lg-6">
         <div class="card p-5">
           <p class="title">Log in</p>
+          <div class="col-12 d-none" id="msgdiv1">
+            <div class="alert alert-danger" role="alert" id="msg1">
+
+            </div>
+          </div>
           <div class="col-12 mt-3">
             <!-- Email Input -->
             <div class="form-floating mb-3">

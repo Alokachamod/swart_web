@@ -30,8 +30,6 @@
                 }
                 ?>
                 <span class="text-lg-start text-light fw-bold">| Help and Contact</span>
-                <a href="index.php" class="text-decoration-none fw-bold offset-8">Admin Sign in</a> 
-
             </div>
 
             <nav class="navbar navbar-expand-lg bg-secondary border-bottom border-body" data-bs-theme="dark">

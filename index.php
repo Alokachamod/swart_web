@@ -1,7 +1,6 @@
 <?php
 include "connection.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -32,12 +31,12 @@ include "connection.php";
         <div class="card p-5">
           <p class="title">Register</p>
           <div class="d-flex justify-content-between">
-          <div class="col-12 d-none" id="msgdiv">
+          
+            <div class="form-floating col-6 pe-3">
+            <div class="col-12 d-none" id="msgdiv">
                 <div class="alert alert-danger" role="alert" id="msg">
                 </div>
               </div>
-            <div class="form-floating col-6 pe-3">
-              
               <!-- First Name Input -->
               <input type="text" class="form-control" id="fname" placeholder="Aloka">
               <label for="fname">First Name</label>
@@ -56,12 +55,12 @@ include "connection.php";
             </div>
             <!-- Password Input -->
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="Password" placeholder="Password">
+              <input type="password" class="form-control" id="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
             <!-- Mobile Number Input -->
             <div class="form-floating">
-              <input type="text" class="form-control" id="mobile" placeholder="Password">
+              <input type="text" class="form-control" id="mobile" placeholder="mobile">
               <label for="number">Mobile Number</label>
             </div>
             <!-- Register Button -->
@@ -86,7 +85,7 @@ include "connection.php";
             </div>
             <!-- Password Input -->
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="Password2" placeholder="Password">
+              <input type="password" class="form-control" id="password2" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
             <div class="col-6">
@@ -100,7 +99,7 @@ include "connection.php";
               <a href="#" class="link-primary" onclick="forgotPassword();">Forgot Password?</a>
             </div>
             <!-- Sign In Button -->
-            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white">Sign In</button>
+            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signin();">Sign In</button>
             <!-- Toggle to Sign Up Section -->
             <p class="text-center">Create a new account <a href="#" onclick="changeView();">Signup</a></p>
           </div>
@@ -118,7 +117,7 @@ include "connection.php";
 
   </div>
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha386-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha388-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
 </body>
 
 </html>

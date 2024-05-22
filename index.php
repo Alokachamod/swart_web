@@ -21,7 +21,11 @@ include "connection.php";
         <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
       </div>
     </div>
+    <div class="col-12 d-none" id="msgdiv">
+      <div class="alert alert-danger" role="alert" id="msg">
 
+      </div>
+    </div>
     <!-- Sign Up Section -->
     <div class="row justify-content-center" id="signUpBox">
       <div class="col-12 col-lg-6">
@@ -29,8 +33,12 @@ include "connection.php";
           <p class="title">Register</p>
           <div class="d-flex justify-content-between">
             <div class="form-floating col-6 pe-3">
+              <div class="col-12 d-none" id="msgdiv">
+                <div class="alert alert-danger" role="alert" id="msg">
+                </div>
+              </div>
               <!-- First Name Input -->
-              <input type="text" class="form-control" id="fname" placeholder="Aloka" >
+              <input type="text" class="form-control" id="fname" placeholder="Aloka">
               <label for="fname">First Name</label>
             </div>
             <div class="form-floating col-6">
@@ -56,7 +64,7 @@ include "connection.php";
               <label for="number">Mobile Number</label>
             </div>
             <!-- Register Button -->
-            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onkeyup="signup(event);">Register</button>
+            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signup();">Register</button>
             <!-- Toggle to Login Section -->
             <p class="text-center">Already have an account ? <a href="#" onclick="changeView();">Log In</a></p>
           </div>
@@ -106,10 +114,10 @@ include "connection.php";
 
       </div>
     </div>
-    
+
   </div>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha386-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha386-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
 </body>
 
 </html>

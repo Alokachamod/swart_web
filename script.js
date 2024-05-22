@@ -7,6 +7,6 @@ function changeView() {
 }
 
 function signup() {
-    alert("ok")
+    alert("ok");
 }
     

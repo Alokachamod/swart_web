@@ -1,11 +1,9 @@
 <?php
-
 include "connection.php";
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -14,86 +12,102 @@ include "connection.php";
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="resources\profile for swart.jpg">
-
 </head>
 
 <body class="mainbody">
-  <div class="container-fluid vh-100 d-flex justify-content-center">
-    <div class="row align-content-center">
-      <!--header-->
-      <div class="col-12">
-        <div class="row">
-          <div class="col-12">
-            <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mt-5 mb-3">
+        <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
+      </div>
+    </div>
+
+    <!-- Sign Up Section -->
+    <div class="row justify-content-center" id="signUpBox">
+      <div class="col-12 col-lg-6">
+        <div class="card p-5">
+          <p class="title">Register</p>
+          <div class="d-flex justify-content-between">
+            <div class="form-floating col-6 pe-3">
+              <!-- First Name Input -->
+              <input type="text" class="form-control" id="fname" placeholder="Aloka" >
+              <label for="fname">First Name</label>
+            </div>
+            <div class="form-floating col-6">
+              <!-- Last Name Input -->
+              <input type="text" class="form-control" id="lname" placeholder="Champathi">
+              <label for="lname">Last Name</label>
+            </div>
+          </div>
+          <div class="col-12 mt-3">
+            <!-- Email Input -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <!-- Password Input -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="Password" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <!-- Mobile Number Input -->
+            <div class="form-floating">
+              <input type="text" class="form-control" id="mobile" placeholder="Password">
+              <label for="number">Mobile Number</label>
+            </div>
+            <!-- Register Button -->
+            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signup();">Register</button>
+            <!-- Toggle to Login Section -->
+            <p class="text-center">Already have an account ? <a href="#" onclick="changeView();">Log In</a></p>
           </div>
         </div>
-        <!--header-->
+      </div>
+    </div>
 
-        <!--content-->
-        <div class="col-12 col-lg-6">
-          <div class="row">
-            <div class="col-6 d-none  d-lg-block offset-10">
-              <!--signup box-->
-              <div class="col-12  col-lg-12 " id="signUpBox"></div>
-              <div class="card ">
-                <p class="title">Register </p>
-              
-                <div class="flex">
-                  <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>Firstname</span>
-                  </label>
-
-                  <label>
-                    <input class="input" type="text" placeholder="" required="">
-                    <span>Lastname</span>
-                  </label>
-                </div>
-
-                <label>
-                  <input class="input" type="email" placeholder="" required="">
-                  <span>Email</span>
-                </label>
-
-                <label>
-                  <input class="input" type="password" placeholder="" required="">
-                  <span>Password</span>
-                </label>
-                <label>
-                  <input class="input" type="text" placeholder="" required="">
-                  <span>Mobile</span>
-                </label>
-                <button class="submit">Submit</button>
-                <p class="signin">Already have an account ? <a href="#" onclick="changeView();">Signin</a> </p>
+    <!-- Sign In Section -->
+    <div class="row justify-content-center d-none" id="signInBox">
+      <div class="col-12 col-lg-6">
+        <div class="card p-5">
+          <p class="title">Log in</p>
+          <div class="col-12 mt-3">
+            <!-- Email Input -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email2" placeholder="aloka@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <!-- Password Input -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="Password2" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div class="col-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberme" />
+                <label class="form-check-label">Remember Me</label>
               </div>
             </div>
-            <!--sign up--->
-            <!--sign in--->
-            <div class="col-12" id="signInBox"></div>
-              <div class="card">
-                <p class="title">Log in </p>
-                
-              
-                <label>
-                  <input class="input" type="email" placeholder="" required="">
-                  <span>Email</span>
-                </label>
-
-                <label>
-                  <input class="input" type="password" placeholder="" required="">
-                  <span>Password</span>
-                </label>
-                
-                <button class="submit">Submit</button>
-                <p class="signin">Create a new account <a href="#" onclick="changeView();">Sign up</a> </p>
-              </div>
+            <!-- forgot password -->
+            <div class="col-6 offset-8">
+              <a href="#" class="link-primary" onclick="forgotPassword();">Forgot Password?</a>
             </div>
-            <!--sign in--->
+            <!-- Sign In Button -->
+            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white">Sign In</button>
+            <!-- Toggle to Sign Up Section -->
+            <p class="text-center">Create a new account <a href="#" onclick="changeView();">Signup</a></p>
           </div>
+          <button class="cta">
+            <span>Admin Log in</span>
+            <svg width="15px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
         </div>
 
       </div>
     </div>
+    
+  </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha386-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
 </body>

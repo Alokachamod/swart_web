@@ -56,7 +56,7 @@ include "connection.php";
               <label for="number">Mobile Number</label>
             </div>
             <!-- Register Button -->
-            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signup();">Register</button>
+            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onkeyup="signup(event);">Register</button>
             <!-- Toggle to Login Section -->
             <p class="text-center">Already have an account ? <a href="#" onclick="changeView();">Log In</a></p>
           </div>

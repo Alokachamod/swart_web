@@ -17,7 +17,7 @@
     
     <div class="container-fluid">
         <div class="col-12">
-        <div class="hero-section">
+        <div class="hero-section col-md-3">
         <video autoplay loop muted playsinline>
             <source src="resources\swartweb intro.mp4" type="video/mp4">
         </video>

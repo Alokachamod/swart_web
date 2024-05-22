@@ -124,6 +124,50 @@ include "connection.php";
         </div>
 
       </div>
+      <!-- modal -->
+      <div class="modal" tabindex="-1" id="fpmodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Forgot Password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row g-3">
+
+                <div class="col-6">
+                  <label class="form-label">New Password</label>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="np" />
+                    <button id="npb" class="btn btn-outline-secondary" type="button" onclick="showPassword1();">Show</button>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <label class="form-label">Re-type Password</label>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="rnp" />
+                    <button id="rnpb" class="btn btn-outline-secondary" type="button" onclick="showPassword2();">Show</button>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Verification Code</label>
+                  <input type="text" class="form-control" id="vcode" />
+                </div>
+
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="resetPassword();">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal -->
     </div>
 
   </div>

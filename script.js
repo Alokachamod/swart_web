@@ -192,3 +192,68 @@ function signout() {
     request.send();
 
 }
+
+function adminChange(){
+  window.location = "adminSignIn.php";
+}
+
+function customerside(){
+  window.location = "index.php";
+}
+
+var av;
+function adminVerification() {
+
+    var email = document.getElementById("e");
+
+    var form = new FormData();
+    form.append("e", email.value);
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Success") {
+                alert("Please take a look at your email to find the VERIFICATION CODE.");
+                var adminVerificationModal = document.getElementById("verificationModal");
+                av = new bootstrap.Modal(adminVerificationModal);
+                av.show();
+            } else {
+                alert(response);
+            }
+
+        }
+    }
+
+    request.open("POST", "adminVerificationProcess.php", true);
+    request.send(form);
+
+}
+
+function verify() {
+
+    var code = document.getElementById("vcode");
+
+    var form = new FormData();
+    form.append("c", code.value);
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "success") {
+                av.hide();
+                window.location = "adminPanel.php";
+            } else {
+                alert(response);
+            }
+
+        }
+    }
+
+    request.open("POST", "verificationProcess.php", true);
+    request.send(form);
+
+}

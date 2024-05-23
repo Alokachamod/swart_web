@@ -114,7 +114,7 @@ include "connection.php";
             <!-- Toggle to Sign Up Section -->
             <p class="text-center">Create a new account <a href="#" onclick="changeView();">Signup</a></p>
           </div>
-          <button class="cta">
+          <button class="cta" onclick="adminChange();">>
             <span>Admin Log in</span>
             <svg width="15px" height="10px" viewBox="0 0 13 10">
               <path d="M1,5 L11,5"></path>

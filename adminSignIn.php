@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="resources\profile for swart.jpg">
 </head>
 
 <body class="mainbody">
@@ -23,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="col-12 p-5">
+            <div class="col-12 p-5 ">
                 <div class="row">
                     <div class="col-6 d-none d-lg-block"></div>
 
@@ -36,7 +37,7 @@
                                 <label class="form-label text-light">Email</label>
                                 <input type="email" class="form-control" placeholder="ex : john@gmail.com" id="e" />
                             </div>
-                            <div class="col-12 col-lg-6 d-grid">
+                            <div class="col-12 col-lg-8 d-grid offset-xl-2 ">
                                 <button class="btn btn-primary text-light" onclick="adminVerification();">Send Verification Code</button>
                             </div>
                             <button class="button col-8 offset-2 " onclick="customerside();" >

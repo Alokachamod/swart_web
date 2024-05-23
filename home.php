@@ -17,14 +17,14 @@
     
     <div class="container-fluid">
         <div class="col-12">
-        <div class="hero-section col-md-3">
+        <div class="hero-section ">
         <video autoplay loop muted playsinline>
             <source src="resources\swartweb intro.mp4" type="video/mp4">
         </video>
         <div class="overlay">
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="col-12">
             <div class="pt">
                 <div class="">

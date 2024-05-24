@@ -257,3 +257,11 @@ function verify() {
     request.send(form);
 
 }
+
+//admin panel, side bar
+
+$(document).ready(function() {
+  $('#sidebarCollapse').on('click', function() {
+      $('.sidebar').toggleClass('active');
+  });
+});

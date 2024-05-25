@@ -25,7 +25,7 @@
                 <?php
                 } else {
                 ?>
-                    <a href="index.php" class="text-decoration-none  fw-bold">Sign In or Register</a> 
+                    <a href="sign.php" class="text-decoration-none  fw-bold">Sign In or Register</a> 
                 <?php
                 }
                 ?>
@@ -34,7 +34,7 @@
 
             <nav class="navbar navbar-expand-lg bg-secondary border-bottom border-body" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="home.php">
+                    <a class="navbar-brand" href="index.php">
                         <img src="resources/swart industries 1.png" alt="Bootstrap" class="img1">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

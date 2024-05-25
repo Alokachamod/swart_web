@@ -21,10 +21,13 @@
                     <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-users"></i> Users</a>
+                    <a href="#"><i class="fas fa-users"></i> User Management</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-cog"></i> Project Management</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-cog"></i> Product Management</a>
                 </li>
             </ul>
         </nav>

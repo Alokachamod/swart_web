@@ -30,7 +30,7 @@ function signup() {
         document.getElementById("msg").innerHTML = "Registration Successfull";
         document.getElementById("msg").className = "alert alert-success";
         document.getElementById("msgdiv").className = "d-block";
-        window.location = "home.php";
+        window.location = "index.php";
       } else {
         document.getElementById("msg").innerHTML = response;
         document.getElementById("msgdiv").className = "d-block";
@@ -58,7 +58,7 @@ function signin() {
             var response = request.responseText;
 
             if (response == "success") {
-                window.location = "home.php";
+                window.location = "index.php";
             } else {
                 document.getElementById("msg1").innerHTML = response;
                 document.getElementById("msgdiv1").className = "d-block";
@@ -262,7 +262,7 @@ function verify() {
 //admin panel, side bar
 
 $(document).ready(function() {
-  $('#sidebarCollapse').on('click', function() {
-      $('.sidebar').toggleClass('active');
-  });
+    $('#sidebarCollapse').on('click', function() {
+        $('.sidebar').toggleClass('active');
+    });
 });

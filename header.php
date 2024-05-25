@@ -34,7 +34,7 @@
 
             <nav class="navbar navbar-expand-lg bg-secondary border-bottom border-body" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="home.php">
                         <img src="resources/swart industries 1.png" alt="Bootstrap" class="img1">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav offset-5">
                             <li class="nav-item">
-                                <a class="nav-link hover-underline" aria-current="page" href="#">Upcoming Projects</a>
+                                <a class="nav-link hover-underline" aria-current="page" href="upcomingprojects.php">Upcoming Projects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link hover-underline" href="#">Products</a>

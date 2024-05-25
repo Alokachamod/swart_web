@@ -7,7 +7,7 @@
     <title>SWART INDUSTRIES</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="profile for swart.jpg">
+    <link rel="icon" href="resources\profile for swart.jpg">
 </head>
 
 <body class="body">

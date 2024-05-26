@@ -33,7 +33,7 @@
             </div>
             <div class="container-fluid">
                 <div class="col-12">
-                    <div class="pt d-lg-flex">
+                    <div class="pt d-lg-flex h-100 w-100 d-inline-block">
                         <div class="">
                             <h1 class="mission text-center pt">Our Mission </h1>
                             <div class="col-8 offset-2">

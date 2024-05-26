@@ -18,25 +18,46 @@
     <div class="container-fluid">
         <div class="col-12">
             <div class="uch text-center">Upcoming Projects</div>
-            <div class="card mb-3  uccard" style="max-width: 540px;">
+            <div class="d-flex">
+            <div class="card mb-3 offset-1 uccard" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="resources\viva img 1.jpg" class="img-fluid rounded-start" >
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title">Bus Ticket System</h5>
+                            <p class="card-text"> The reason for creating this bus ticket system is to solve many problems of not giving the remaining money properly and avoiding giving the remaining money fraudulently during the daily use of bus services. </p>
                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card mb-3 offset-1 uccard" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="resources\_a3d23abc-c792-4b67-8d75-0671a4aef2a1.jpg" class="img-fluid rounded-start" >
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Hand Armor</h5>
+                            <p class="card-text"> The reason for creating this bus ticket system is to solve many problems of not giving the remaining money properly and avoiding giving the remaining money fraudulently during the daily use of bus services. </p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
     <?php include "footer.php"; ?>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha388-iqQ80CjrKlQ1VpLN3FMxifQzLtOhwIWGEH2tIW7boqApr4vIWXOqDjlzBrvdZGUv" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 
 </html>

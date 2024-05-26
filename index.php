@@ -26,7 +26,7 @@
                 </video>
 
                 <div class="overlay">
-                    <div class="text-overlay">
+                    <div class="text-overlay animate-left">
                         Think Big , innovate bold
                     </div>
                 </div>
@@ -35,9 +35,9 @@
                 <div class="col-12">
                     <div class="pt d-lg-flex h-100 w-100 d-inline-block">
                         <div class="">
-                            <h1 class="mission text-center pt">Our Mission </h1>
+                            <h1 class="mission text-center pt animate-up">Our Mission </h1>
                             <div class="col-8 offset-2">
-                                <p class="mbody text-center text-light">
+                                <p class="mbody text-center text-light animate-down">
                                     Our mission at Swart Industries is to relentlessly pursue innovation through research and development aimed
                                     at revolutionizing industries and improving quality of life globally. We are committed to pushing the
                                     boundaries of scientific discovery and technological advancement to address the world's most pressing challenges.
@@ -45,10 +45,10 @@
                             </div>
                         </div>
                         <div class="">
-                            <h1 class="vision text-center">Our vision </h1>
+                            <h1 class="vision text-center animate-up">Our vision </h1>
                             <div class="col-8 offset-2">
 
-                                <p class="mbody text-center text-light">
+                                <p class="mbody text-center text-light animate-down">
                                     At Swart Industries, our vision is to be a leading force in shaping the future through groundbreaking research
                                     and development initiatives. We expect to create a technological breakthrough in Sri Lanka by developing technology
                                     in Sri Lanka. We aim to create sustainable solutions that empower businesses and communities, driving progress and

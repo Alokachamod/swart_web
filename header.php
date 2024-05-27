@@ -46,7 +46,7 @@
                                 <a class="nav-link hover-underline" aria-current="page" href="upcomingprojects.php">Upcoming Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline" href="#">Products</a>
+                                <a class="nav-link hover-underline" href="products.php">Products</a>
                             </li>
 
                             <li class="nav-item">

@@ -23,7 +23,7 @@
                     <div class="card h-100 shadow-sm">
                         <img src="placeholder.jpg" class="card-img-top" alt="Product Image">
                         <div class="card-body">
-                            <h5 class="card-title">Product Title</h5>
+                            <h5 class="card-title">SWART agriculture Drone</h5>
                             <p class="card-text">This is a short description of the product.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-muted">$19.99</span>

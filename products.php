@@ -19,12 +19,43 @@
         <div class="col-12">
             <div class="uch text-center">Products</div>
             <div class="d-flex">
+                <div class="col-md-4 col-sm-6 col-12 mb-3 p-1">
+                    <div class="card h-100 shadow-sm">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="resources\drone1.jpg" class="d-block w-100" >
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="resources\drone2.jpg" class="d-block w-100" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">SWART agriculture Robo Drone</h5>
+                            <p class="card-text"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">$19.99</span>
+                                <a href="#" class="btn btn-sm btn-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-4 col-sm-6 col-12 mb-3">
                     <div class="card h-100 shadow-sm">
-                        <img src="placeholder.jpg" class="card-img-top" alt="Product Image">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="resources\drone1.jpg" class="d-block w-100" >
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="resources\drone2.jpg" class="d-block w-100" >
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">SWART agriculture Drone</h5>
-                            <p class="card-text">This is a short description of the product.</p>
+                            <p class="card-text"></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-muted">$19.99</span>
                                 <a href="#" class="btn btn-sm btn-primary">Add to Cart</a>

@@ -36,7 +36,7 @@
             <div class="card mb-3 offset-1 uccard" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="resources\_a3d23abc-c792-4b67-8d75-0671a4aef2a1.jpg" class="img-fluid rounded-start" >
+                        <img src="resources\hand armor.jpg" class="img-fluid rounded-start" >
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

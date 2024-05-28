@@ -25,7 +25,7 @@
                 <?php
                 } else {
                 ?>
-                    <a href="sign.php" class="text-decoration-none  fw-bold">Sign In or Register</a>
+                    <a href="sign.php" class="text-decoration-none fw-bold">Sign In or Register</a>
                 <?php
                 }
                 ?>
@@ -44,22 +44,22 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link hover-underline text-white" aria-current="page" href="upcomingprojects.php">Upcoming Projects</a>
+                                <a class="text-white nav-link hover-underline" aria-current="page" href="upcomingprojects.php">Upcoming Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline text-white" href="products.php">Products</a>
+                                <a class="text-white nav-link hover-underline" href="products.php">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline text-white" href="#">Services</a>
+                                <a class="text-white nav-link hover-underline" href="#">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline text-white" href="#">About Us</a>
+                                <a class="text-white nav-link hover-underline" href="#">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-underline text-white" href="#">Contact Us</a>
+                                <a class="text-white nav-link hover-underline" href="#">Contact Us</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link hover-underline text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="text-white nav-link hover-underline dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     My Account
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

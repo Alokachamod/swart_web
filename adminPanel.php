@@ -40,7 +40,9 @@
                 </div>
             </nav>
             <div class="container-fluid">
-                <h1>Welcome to the Admin Panel</h1>
+                <div class="col-12">
+                    
+                </div>
             </div>
         </div>
     </div>

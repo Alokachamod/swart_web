@@ -423,6 +423,14 @@ body {
 
 /*admin panel*/
 
+.adminBody{
+    background-image: url("resources/gradient_2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .wrapper {
     display: flex;
     width: 100%;
@@ -432,7 +440,7 @@ body {
 .sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: #0033ff;
     color: #fff;
     transition: all 0.3s;
 }
@@ -463,14 +471,14 @@ body {
 }
 
 .sidebar ul li a:hover {
-    color: #7386D5;
+    color: #0033ff;
     background: #fff;
 }
 
 .sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #002df7;
 }
 
 .content {
@@ -514,3 +522,4 @@ a[aria-expanded="true"] {
 }
 
 /*product page*/
+

@@ -10,7 +10,7 @@
     <link rel="icon" href="resources\profile for swart.jpg">
 </head>
 
-<body>
+<body class="adminBody">
 <div class="wrapper">
         <nav class="sidebar">
             <div class="sidebar-header">
@@ -32,7 +32,7 @@
             </ul>
         </nav>
         <div class="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-bars"></i>

@@ -30,7 +30,7 @@ function signup() {
         document.getElementById("msg").innerHTML = "Registration Successfull";
         document.getElementById("msg").className = "alert alert-success";
         document.getElementById("msgdiv").className = "d-block";
-        window.location = "index.php";
+        
       } else {
         document.getElementById("msg").innerHTML = response;
         document.getElementById("msgdiv").className = "d-block";

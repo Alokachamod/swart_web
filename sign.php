@@ -16,7 +16,7 @@ include "connection.php";
 <body class="mainbody">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mt-5 mb-3">
+      <div class="mt-5 mb-3 text-center col-12">
         <p class=" title01 text-light">Hi, Welcome to SWART Industries</p>
       </div>
     </div>
@@ -31,7 +31,7 @@ include "connection.php";
     <!-- Sign Up Section -->
     <div class="row justify-content-center" id="signUpBox">
       <div class="col-12 col-lg-6">
-        <div class="card p-5">
+        <div class="p-5 card">
           <p class="title">Register</p>
           <div class="col-12 d-none" id="msgdiv">
             <div class="alert alert-danger" role="alert" id="msg">
@@ -53,14 +53,14 @@ include "connection.php";
               <label for="lname">Last Name</label>
             </div>
           </div>
-          <div class="col-12 mt-3">
+          <div class="mt-3 col-12">
             <!-- Email Input -->
-            <div class="form-floating mb-3">
+            <div class="mb-3 form-floating">
               <input type="email" class="form-control" id="email" placeholder="name@example.com">
               <label for="floatingInput">Email address</label>
             </div>
             <!-- Password Input -->
-            <div class="form-floating mb-3">
+            <div class="mb-3 form-floating">
               <input type="password" class="form-control" id="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
@@ -70,7 +70,7 @@ include "connection.php";
               <label for="number">Mobile Number</label>
             </div>
             <!-- Register Button -->
-            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signup();">Register</button>
+            <button type="button" class="mt-3 mb-1 text-white btn btn-info col-12" onclick="signup();">Register</button>
             <!-- Toggle to Login Section -->
             <p class="text-center">Already have an account ? <a href="#" onclick="changeView();">Log In</a></p>
           </div>
@@ -79,23 +79,23 @@ include "connection.php";
     </div>
 
     <!-- Sign In Section -->
-    <div class="row justify-content-center d-none" id="signInBox">
+    <div class="row justify-content-center d-none " id="signInBox" >
       <div class="col-12 col-lg-6">
-        <div class="card p-5">
+        <div class="p-5 card">
           <p class="title">Log in</p>
           <div class="col-12 d-none" id="msgdiv1">
             <div class="alert alert-danger" role="alert" id="msg1">
 
             </div>
           </div>
-          <div class="col-12 mt-3">
+          <div class="mt-3 col-12">
             <!-- Email Input -->
-            <div class="form-floating mb-3">
+            <div class="mb-3 form-floating">
               <input type="email" class="form-control" id="email2" placeholder="aloka@example.com" value="<?php echo $_COOKIE['email']; ?>">
               <label for="floatingInput">Email address</label>
             </div>
             <!-- Password Input -->
-            <div class="form-floating mb-3">
+            <div class="mb-3 form-floating">
               <input type="password" class="form-control" id="password2" placeholder="Password" value="<?php echo $_COOKIE['password']; ?>">
               <label for="floatingPassword">Password</label>
             </div>
@@ -110,7 +110,7 @@ include "connection.php";
               <a href="#" class="link-primary" onclick="forgotPassword();">Forgot Password?</a>
             </div>
             <!-- Sign In Button -->
-            <button type="button" class="btn btn-info col-12 mt-3 mb-1 text-white" onclick="signin();">Sign In</button>
+            <button type="button" class="mt-3 mb-1 text-white btn btn-info col-12" onclick="signin();">Sign In</button>
             <!-- Toggle to Sign Up Section -->
             <p class="text-center">Create a new account <a href="#" onclick="changeView();">Signup</a></p>
           </div>
@@ -138,7 +138,7 @@ include "connection.php";
 
                 <div class="col-6">
                   <label class="form-label">New Password</label>
-                  <div class="input-group mb-3">
+                  <div class="mb-3 input-group">
                     <input type="password" class="form-control" id="np" />
                     <button id="npb" class="btn btn-outline-secondary" type="button" onclick="showPassword1();">Show</button>
                   </div>
@@ -146,7 +146,7 @@ include "connection.php";
 
                 <div class="col-6">
                   <label class="form-label">Re-type Password</label>
-                  <div class="input-group mb-3">
+                  <div class="mb-3 input-group">
                     <input type="password" class="form-control" id="rnp" />
                     <button id="rnpb" class="btn btn-outline-secondary" type="button" onclick="showPassword2();">Show</button>
                   </div>

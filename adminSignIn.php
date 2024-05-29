@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="col-12 p-5 ">
+            <div class="p-5 col-12 ">
                 <div class="row">
                     <div class="col-6 d-none d-lg-block"></div>
 
@@ -76,7 +76,7 @@
 
             <!--  -->
 
-            <div class="col-12 fixed-bottom text-center">
+            <div class="text-center col-12 fixed-bottom">
                 <p>&copy; 2024 SWART Industries | All Rights Reserved</p>
             </div>
 
@@ -85,6 +85,7 @@
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

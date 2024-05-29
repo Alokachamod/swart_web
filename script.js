@@ -27,13 +27,18 @@ function signup() {
       var response = request.responseText;
 
       if (response == "success") {
-        document.getElementById("msg").innerHTML = "Registration Successfull";
-        document.getElementById("msg").className = "alert alert-success";
-        document.getElementById("msgdiv").className = "d-block";
+        Swal.fire({
+            title: "Successful",
+            text: "Registration Successful",
+            icon: "success"
+          });
         
       } else {
-        document.getElementById("msg").innerHTML = response;
-        document.getElementById("msgdiv").className = "d-block";
+        Swal.fire({
+            title: "Registration Unsuccessful",
+            text: response,
+            icon: "error"
+          });
       }
     }
   };
@@ -60,8 +65,11 @@ function signin() {
             if (response == "success") {
                 window.location = "index.php";
             } else {
-                document.getElementById("msg1").innerHTML = response;
-                document.getElementById("msgdiv1").className = "d-block";
+                Swal.fire({
+                    title: "Sign in Unuccessful",
+                    text: response,
+                    icon: "error"
+                  });
             }
 
         }
@@ -82,13 +90,21 @@ function forgotPassword() {
           var text = request.responseText;
 
           if (text == "Success") {
-              alert("Verification code has sent successfully. Please check your Email.");
+            Swal.fire({
+                title: "Successful",
+                text: "Verification code has sent successfully. Please check your Email.",
+                icon: "success"
+              });
+             
               var modal = document.getElementById("fpmodal");
               forgotPasswordModal = new bootstrap.Modal(modal);
               forgotPasswordModal.show();
           } else {
-              document.getElementById("msg1").innerHTML = text;
-              document.getElementById("msgdiv1").className = "d-block";
+            Swal.fire({
+                title: "unsuccess",
+                text: this.text,
+                icon: "success"
+              });;
           }
 
       }
@@ -216,12 +232,20 @@ function adminVerification() {
         if (request.status == 200 & request.readyState == 4) {
             var response = request.responseText;
             if (response == "Success") {
-                alert("Please take a look at your email to find the VERIFICATION CODE.");
+                Swal.fire({
+                    title: "Successful",
+                    text: "Please take a look at your email to find the VERIFICATION CODE.",
+                    icon: "success"
+                    });
                 var adminVerificationModal = document.getElementById("verificationModal");
                 av = new bootstrap.Modal(adminVerificationModal);
                 av.show();
             } else {
-                alert(response);
+                Swal.fire({
+                    title: "Unsuccessful",
+                    text: response,
+                    icon: "alert",
+                    });
             }
 
         }

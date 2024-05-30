@@ -16,6 +16,7 @@
 <body class="upbody-bg-dark ">
     <?php include "header.php"; ?>
     <div class="container-fluid">
+
         <div class="col-12">
             <div class="uch text-center">Upcoming Projects</div>
             <div class="d-flex">

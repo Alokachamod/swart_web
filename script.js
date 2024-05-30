@@ -103,7 +103,7 @@ function forgotPassword() {
             Swal.fire({
                 title: "unsuccess",
                 text: this.text,
-                icon: "success"
+                icon: "error"
               });;
           }
 

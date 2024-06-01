@@ -289,8 +289,8 @@ function verify() {
 
 //admin panel
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Example to dynamically set the username
-    var username = "Admin"; // Replace with dynamic username if needed
-    document.getElementById("username").textContent = username;
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Example to dynamically set the username
+//     var username = "Admin"; // Replace with dynamic username if needed
+//     document.getElementById("username").textContent = username;
+// });

@@ -2,24 +2,22 @@
 session_start();
 include "connection.php";
 
-if(isset($_POST["c"])){
+if (isset($_POST["c"])) {
 
     $v = $_POST["c"];
 
-    $admin_rs = Database::search("SELECT * FROM `admin` WHERE `verification_code`='".$v."'");
+    $admin_rs = Database::search("SELECT * FROM `admin` WHERE `verification_code`='" . $v . "'");
     $admin_num = $admin_rs->num_rows;
 
-    if($admin_num == 1){
+    if ($admin_num == 1) {
 
         $admin_data = $admin_rs->fetch_assoc();
         $_SESSION["au"] = $admin_data;
         echo ("success");
-
-    }else{
+    } else {
         echo ("Invalid Verification Code.");
     }
-
-}else{
+} else {
     echo ("Please enter the verification code.");
 }
 ?>

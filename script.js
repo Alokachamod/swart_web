@@ -270,9 +270,13 @@ function verify() {
             var response = request.responseText;
             if (response == "success") {
                 av.hide();
-                window.location = "adminPanel.php";
+                window.location = "dashboard.php";
             } else {
-                alert(response);
+                Swal.fire({
+                    title: "Unsuccessful",
+                    text: response,
+                    icon: "alert",
+                    });
             }
 
         }

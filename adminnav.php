@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+require "connection.php";
+
+if (isset($_SESSION["au"])) {
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +45,7 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Welcome, <span id="username">Admin</span>
+                Welcome, <span id="username"><?php echo $_SESSION["au"]["fname"] ; ?></span>
             </span>
         </div>
     </header>
@@ -50,3 +59,8 @@
 </body>
 
 </html>
+<?php
+} else {
+    echo ("You are Not a valid user");
+}
+?>

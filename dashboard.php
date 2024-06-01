@@ -11,7 +11,7 @@
 </head>
 <body class="adminBody">
 
-<?php include "adminPanel.php";?>
+<?php include "adminnav.php";?>
 
     <div class="container-fluid">
         <div class="col-12">

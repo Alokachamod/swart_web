@@ -294,3 +294,69 @@ function verify() {
 //     var username = "Admin"; // Replace with dynamic username if needed
 //     document.getElementById("username").textContent = username;
 // });
+
+//user profile
+
+function changeImage() {
+    var view = document.getElementById("viewImg");//img tag
+    var file = document.getElementById("profileimg");//file chooser
+
+    file.onchange = function () {
+        var file1 = this.files[0];
+        var url = window.URL.createObjectURL(file1);
+        view.src = url;
+    }
+
+}
+
+function updateProfile() {
+    var fname = document.getElementById("fname");
+    var lname = document.getElementById("lname");
+    var mobile = document.getElementById("mobile");
+    var line1 = document.getElementById("line1");
+    var line2 = document.getElementById("line2");
+    var province = document.getElementById("province");
+    var district = document.getElementById("district");
+    var city = document.getElementById("city");
+    var pcode = document.getElementById("pcode");
+    var image = document.getElementById("profileimg");
+
+    var f = new FormData();
+    f.append("fn", fname.value);
+    f.append("ln", lname.value);
+    f.append("m", mobile.value);
+    f.append("l1", line1.value);
+    f.append("l2", line2.value);
+    f.append("p", province.value);
+    f.append("d", district.value);
+    f.append("c", city.value);
+    f.append("pc", pcode.value);
+
+    if (image.files.length == 0) {
+
+        var confirmation = confirm("Are you sure You don't want to update Profile Image?");
+
+        if (confirmation) {
+            alert("you have not selected any image.");
+        }
+
+    } else {
+        f.append("image", image.files[0]);
+    }
+
+    var r = new XMLHttpRequest();
+
+    r.onreadystatechange = function () {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == "success") {
+                window.location.reload();
+            } else {
+                alert(t);
+            }
+        }
+    }
+
+    r.open("POST", "updateProfileProcess.php", true);
+    r.send(f);
+}

@@ -63,7 +63,7 @@
                                     My Account
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item text-dark" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item text-dark" href="userprofile.php">My Profile</a></li>
                                     <li><a class="dropdown-item text-dark" href="#">Cart</a></li>
                                     <li><a class="dropdown-item text-dark" href="#">Wish List</a></li>
                                 </ul>

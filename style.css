@@ -440,15 +440,14 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.navbar-text {
-    margin-left: auto;
-}
+
 
 @media (max-width: 767px) {
     .navbar-text {
         margin-top: 10px;
     }
 }
+
 
 
 

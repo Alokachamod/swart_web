@@ -1,12 +1,4 @@
-<?php
 
-session_start();
-
-include "connection.php";
-
-if (isset($_SESSION["au"])) {
-
-?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -27,7 +19,7 @@ if (isset($_SESSION["au"])) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="mr-auto navbar-nav">
+                <ul class="mr-auto navbar-nav offset-2">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Dashboard</a>
                     </li>
@@ -44,7 +36,7 @@ if (isset($_SESSION["au"])) {
                         <a class="nav-link" href="#">Chat</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
+                <span class="navbar-text offset-1">
                     Welcome, <span id="username"><?php echo $_SESSION["au"]["fname"]; ?></span>
                 </span>
             </div>
@@ -59,8 +51,3 @@ if (isset($_SESSION["au"])) {
     </body>
 
     </html>
-<?php
-} else {
-    echo ("You are Not a valid user");
-}
-?>

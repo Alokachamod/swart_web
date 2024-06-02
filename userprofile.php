@@ -56,7 +56,7 @@ include "connection.php";
 
             ?>
 
-                <div class="col-12 bg-primary">
+                <div class="col-12 bg-dark">
                     <div class="row">
 
                         <div class="mt-4 mb-4 rounded col-12 bg-body">
@@ -70,13 +70,13 @@ include "connection.php";
                                         if (empty($image_data["path"])) {
 
                                         ?>
-                                            <img src="resources\profile_pic.png" class="mt-5 rounded" style="width: 150px;" id="viewImg" />
+                                            <img src="resources\profile_pic.png" class="mt-5 rounded" style="height: 150px;" id="viewImg" />
                                         <?php
 
                                         } else {
 
                                         ?>
-                                            <img src="<?php echo $image_data["path"]; ?>" class="rounded-circle" id="viewImg" />
+                                            <img src="<?php echo $image_data["path"]; ?>" class="rounded-circle"  style="height: 150px;" id="viewImg" />
                                         <?php
 
                                         }
@@ -285,13 +285,6 @@ include "connection.php";
 
                                     </div>
                                 </div>
-
-                                <div class="text-center col-md-4">
-                                    <div class="row">
-                                        <span class="mt-5 fw-bold text-black-50">Display ads</span>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 

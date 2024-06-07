@@ -12,7 +12,7 @@
 </head>
 
 <body>
-            <footer class="container-fluid bg-dark text-light p-3 ">
+            <footer class="container-fluid bg-dark text-light p-3 border-top">
                 <div class="row footer-content">
                     <div class="col-md-4 col-sm-6 animate-up">
                         <h3 class="mb-3">SWART INDUSTRIES</h3>

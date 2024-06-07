@@ -9,7 +9,7 @@ include "connection.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>User Profile | eShop</title>
+    <title>User Profile |swart industries</title>
 
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
@@ -20,7 +20,7 @@ include "connection.php";
     <link rel="icon" href="resource/logo.svg" />
 </head>
 
-<body>
+<body class="bg-dark">
 
     <div class="container-fluid">
         <div class="row">
@@ -56,10 +56,10 @@ include "connection.php";
 
             ?>
 
-                <div class="col-12 bg-dark">
+                <div class="col-12 bg-dark text-light offset-2">
                     <div class="row">
 
-                        <div class="mt-4 mb-4 rounded col-12 bg-body">
+                        <div class="mt-4 mb-4 rounded col-12 ">
                             <div class="row g-2">
 
                                 <div class="col-md-3 border-end">
@@ -86,15 +86,15 @@ include "connection.php";
 
 
                                         <span class="fw-bold"><?php echo $data["fname"] . " " . $data["lname"]; ?></span>
-                                        <span class="fw-bold text-black-50"><?php echo $email; ?></span>
+                                        <span class="fw-bold text-white-50"><?php echo $email; ?></span>
 
                                         <input type="file" class="d-none" id="profileimg" accept="image/*" />
-                                        <label for="profileimg" class="mt-5 btn btn-primary" onclick="changeImage();"></label>
+                                        <label for="profileimg" class="mt-5 btn btn-primary" onclick="changeImage();">Change image</label>
 
                                     </div>
                                 </div>
 
-                                <div class="col-md-5 border-end">
+                                <div class="col-md-5 ">
                                     <div class="p-3 py-5">
 
                                         <div class="mb-3 d-flex justify-content-between align-items-center">

@@ -42,15 +42,15 @@ if (isset($_SESSION["u"])) {
 
             move_uploaded_file($image["tmp_name"], $file_name);
 
-            $image_rs = Database::search("SELECT * FROM `profile_image` WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
+            $image_rs = Database::search("SELECT * FROM `user_img` WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
             $image_num = $image_rs->num_rows;
 
             if ($image_num == 1) {
 
-                Database::iud("UPDATE `profile_image` SET `path`='" . $file_name . "' WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
+                Database::iud("UPDATE `user_img` SET `path`='" . $file_name . "' WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
             } else {
 
-                Database::iud("INSERT INTO `profile_image` (`path`,`user_email`) VALUES ('" . $file_name . "','" . $_SESSION["u"]["email"] . "')");
+                Database::iud("INSERT INTO `user_img` (`path`,`user_email`) VALUES ('" . $file_name . "','" . $_SESSION["u"]["email"] . "')");
             }
         }
     }

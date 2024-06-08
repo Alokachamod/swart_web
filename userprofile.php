@@ -56,7 +56,7 @@ include "connection.php";
 
             ?>
 
-                <div class="col-12 bg-dark text-light offset-2">
+                <div class="col-12 bg-dark text-light ">
                     <div class="row">
 
                         <div class="mt-4 mb-4 rounded col-12 ">

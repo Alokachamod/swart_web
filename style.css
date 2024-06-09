@@ -470,4 +470,20 @@ body {
     margin-top: 15vh;
 }
 
-/*product page*/
+/*user manage page*/
+.card {
+    margin-top: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.close {
+    color: white;
+}

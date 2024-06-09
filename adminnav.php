@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="mr-auto navbar-nav offset-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">User Management</a>
+                        <a class="nav-link" href="usermanage.php">User Management</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Project Management</a>

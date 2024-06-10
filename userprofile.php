@@ -36,8 +36,13 @@ include "connection.php";
                     <div class="text-center text-white uph"> User Profile </div>
                     <div>
                         <div class="col-12">
-                            <div class="bg-center jus">
+                            <div class="upi">
                                 <img src="resources\profile_pic.png" class="rounded-circle" style="height: 150px;">
+                                <div>
+                                    <button class="upci">
+                                        GET STARTED
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

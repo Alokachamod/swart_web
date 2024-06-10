@@ -40,7 +40,7 @@ include "connection.php";
                                 <img src="resources\profile_pic.png" class="rounded-circle" style="height: 150px;">
                                 <div>
                                     <button class="upci">
-                                        GET STARTED
+                                        Change Image
                                     </button>
                                 </div>
                             </div>

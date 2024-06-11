@@ -277,6 +277,18 @@ function verify() {
 
 //user profile
 
+var passwordInput = document.getElementById("password");
+var showPasswordButton = document.getElementById("showPassword");
+
+showPasswordButton.addEventListener("click", function() {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    showPasswordButton.textContent = "Hide";
+  } else {
+    passwordInput.type = "password";
+    showPasswordButton.textContent = "Show";
+  }
+});
 
 //user management
 

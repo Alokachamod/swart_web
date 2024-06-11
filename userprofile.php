@@ -44,6 +44,83 @@ include "connection.php";
                                     </button>
                                 </div>
                             </div>
+                            <div class="container">
+                                <div class="p-4 row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="card futuristic-card">
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="firstName" class="text-light">First Name</label>
+                                                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastName" class="text-light">Last Name</label>
+                                                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mobile" class="text-light">Mobile</label>
+                                                        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password" class="text-light">Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button" id="showPassword">Show</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email" class="text-light">Email</label>
+                                                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="registeredDate" class="text-light">Registered Date</label>
+                                                        <input type="date" class="form-control" id="registeredDate">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="addressLine1" class="text-light">Address Line 1</label>
+                                                        <input type="text" class="form-control" id="addressLine1" placeholder="Enter your address line 1">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="addressLine2" class="text-light">Address Line 2</label>
+                                                        <input type="text" class="form-control" id="addressLine2" placeholder="Enter your address line 2">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="province" class="text-light">Province</label>
+                                                        <select class="form-control" id="province">
+                                                            <option value="">Select Province</option>
+                                                            <!-- Add options for provinces here -->
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="district" class="text-light">District</label>
+                                                        <select class="form-control" id="district">
+                                                            <option value="">Select District</option>
+                                                            <!-- Add options for districts here -->
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="city">City</label>
+                                                        <select class="form-control " class="text-light" id="city">
+                                                            <option value="">Select City</option>
+                                                            <!-- Add options for cities here -->
+                                                        </select>
+                                                    </div>
+                                                    <div class="p-3 form-group">
+                                                        <label for="postalCode" class="text-light">Postal Code</label>
+                                                        <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

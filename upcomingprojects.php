@@ -7,7 +7,7 @@
     <title>upcomingprojects</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="resources\profile for swart.jpg">
+    <link rel="icon" href="resources\swart new logo                           S.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
     <div class="container-fluid">
 
         <div class="col-12">
-            <div class="uch text-center">Upcoming Projects</div>
+            <div class="text-center uch">Upcoming Projects</div>
             <div class="d-flex">
-            <div class="card mb-3 offset-1 uccard" style="max-width: 540px;">
+            <div class="mb-3 card offset-1 uccard" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="resources\viva img 1.jpg" class="img-fluid rounded-start" >
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card mb-3 offset-1 uccard" style="max-width: 540px;">
+            <div class="mb-3 card offset-1 uccard" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="resources\hand armor.jpg" class="img-fluid rounded-start" >

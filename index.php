@@ -7,7 +7,7 @@
     <title>SWART INDUSTRIES</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="resources\profile for swart.jpg">
+    <link rel="icon" href="resources\swart new logo                           S.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
@@ -22,12 +22,12 @@
         <div class="col-12">
             <div class="hero-section ">
                 <video autoplay loop muted playsinline>
-                    <source src="resources\swartweb intro.mp4" type="video/mp4">
+                    <source src="resources\swart.mp4" type="video/mp4">
                 </video>
 
                 <div class="overlay">
                     <div class="text-overlay animate-left">
-                        Think Big , innovate bold
+                        
                     </div>
                 </div>
             </div>

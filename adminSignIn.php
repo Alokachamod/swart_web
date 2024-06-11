@@ -7,7 +7,7 @@
     <title>Admin Sign in | SWART INDUSTRIES</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="resources\profile for swart.jpg">
+    <link rel="icon" href="resources\swart new logo                           S.png">
 </head>
 
 <body class="mainbody">

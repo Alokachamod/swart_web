@@ -32,7 +32,18 @@
             include "connection.php";
 
             if (isset($_SESSION["u"])) {
-            ?>
+
+                $email = $_SESSION["u"]["email"];
+
+
+                $image_rs = Database::search("SELECT * FROM `user_img` WHERE `user_email`='" . $email . "'");
+
+                $address_rs = Database::search("SELECT * FROM `user_has_address` INNER JOIN `city` ON user_has_address.city_id=city.id INNER JOIN `district` ON city.district_id=district.id INNER JOIN `province` ON district.province_id=province.id WHERE `user_email`='" . $email . "'");
+
+                
+
+
+                            ?>
 
 <div class="col-12">
 

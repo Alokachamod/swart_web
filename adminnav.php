@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+include "connection.php";
+
+if (isset($_SESSION["au"])) {
+    $data = $_SESSION["au"];
+
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -37,13 +47,12 @@
                     </li>
                 </ul>
                 <span class="navbar-text offset-1">
-                    Welcome, <span id="username"><?php echo $_SESSION["au"]["fname"]; ?></span>
+                    Welcome, <h4 id="username"><?php echo $_SESSION["au"]["fname"]; ?></h4>
                 </span>
             </div>
         </header>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-bskAUcGYLNBzUHbsjoXBw4b4+alvE4Eb4Vs+huljiskcU7yqkMKnxuogbIz9PPv9b7E" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/your_fontawesome_kit_code.js" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -51,3 +60,12 @@
     </body>
 
     </html>
+
+<?php
+} else {
+    echo ("You are Not a valid user");
+}
+?>
+    echo ("You are Not a valid user");
+}
+?>

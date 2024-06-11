@@ -1,4 +1,10 @@
+<?php
 
+session_start();
+include "connection.php";
+
+if (isset($_SESSION["au"])) {
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,6 +78,7 @@ include "adminnav.php"
             </div>
         </div>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -79,3 +86,11 @@ include "adminnav.php"
     <script src="script.js"></script>
 </body>
 </html>
+
+<?php
+
+} else {
+    header("location:index.php");
+}
+
+?>

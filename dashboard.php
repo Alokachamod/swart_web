@@ -1,12 +1,4 @@
-<?php
 
-session_start();
-
-include "connection.php";
-
-if (isset($_SESSION["au"])) {
-
-?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -114,9 +106,3 @@ if (isset($_SESSION["au"])) {
     </body>
 
     </html>
-
-<?php
-} else {
-    echo ("You are Not a valid user");
-}
-?>

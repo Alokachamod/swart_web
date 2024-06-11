@@ -290,6 +290,10 @@ showPasswordButton.addEventListener("click", function() {
   }
 });
 
+function userProfileUpdate(){
+    var
+}
+
 //user management
 
 document.addEventListener("DOMContentLoaded", () => {

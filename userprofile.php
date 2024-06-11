@@ -37,12 +37,31 @@ include "connection.php";
                     <div>
                         <div class="col-12">
                             <div class="upi">
-                                <img src="resources\profile_pic.png" class="rounded-circle" style="height: 150px;">
+                                <?php
+
+                                if (empty($image_data["path"])) {
+
+                                ?>
+                                    <img src="resources\profile_pic.png" class="rounded-circle" style="width: 150px;" id="viewImg" />
+                                <?php
+
+                                } else {
+
+                                ?>
+                                    <img src="<?php echo $image_data["path"]; ?>" class="rounded-circle" style="width: 150px;" id="viewImg" />
+                                <?php
+
+                                }
+
+                                ?>
+                            
+                                
                                 <div>
-                                    <button class="upci">
+                                    <button class="upci"  onclick="changeImage();>
                                         Change Image
                                     </button>
                                 </div>
+                                
                             </div>
                             <div class="container">
                                 <div class="p-4 row justify-content-center">
@@ -113,7 +132,7 @@ include "connection.php";
                                                         <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
                                                     </div>
                                                     <div class="text-center">
-                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <button type="submit" class="btn btn-primary" onclick="userProfileUpdate();">Submit</button>
                                                     </div>
                                                 </form>
                                             </div>

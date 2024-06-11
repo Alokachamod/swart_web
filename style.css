@@ -504,6 +504,7 @@ body {
 }
 
 .upci {
+    margin-top: -50px;
     border-radius: .25rem;
     text-transform: uppercase;
     font-style: normal;

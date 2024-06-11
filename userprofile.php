@@ -1,6 +1,3 @@
-<?php
-include "connection.php";
-?>
 <!DOCTYPE html>
 
 <html>
@@ -25,125 +22,143 @@ include "connection.php";
 
 <body class="bg-dark">
 
-    <?php
-    include "header.php";
-    ?>
 
     <div class="container-fluid">
+
+        <div class="row">
+            <?php
+            include "header.php";
+           
+            include "connection.php";
+
+            if (isset($_SESSION["u"])) {
+            ?>
+
+<div class="col-12">
+
+<div class="bg-center col-12">
+    <div class="text-center text-white uph"> User Profile </div>
+    <div>
         <div class="col-12">
-            <div class="row">
-                <div class="bg-center col-12">
-                    <div class="text-center text-white uph"> User Profile </div>
-                    <div>
-                        <div class="col-12">
-                            <div class="upi">
-                                <?php
+            <div class="upi">
+                <?php
 
-                                if (empty($image_data["path"])) {
+                if (empty($image_data["path"])) {
 
-                                ?>
-                                    <img src="resources\profile_pic.png" class="rounded-circle" style="width: 150px;" id="viewImg" />
-                                <?php
+                ?>
+                    <img src="resources\profile_pic.png" class="rounded-circle" style="width: 150px;" id="viewImg" />
+                <?php
 
-                                } else {
+                } else {
 
-                                ?>
-                                    <img src="<?php echo $image_data["path"]; ?>" class="rounded-circle" style="width: 150px;" id="viewImg" />
-                                <?php
+                ?>
+                    <img src="<?php echo $image_data["path"]; ?>" class="rounded-circle" style="width: 150px;" id="viewImg" />
+                <?php
 
-                                }
+                }
 
-                                ?>
-                            
-                                
-                                <div>
-                                    <button class="upci"  onclick="changeImage();>
-                                        Change Image
-                                    </button>
-                                </div>
-                                
-                            </div>
-                            <div class="container">
-                                <div class="p-4 row justify-content-center">
-                                    <div class="col-md-6">
-                                        <div class="card futuristic-card">
-                                            <div class="card-body">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label for="firstName" class="text-light">First Name</label>
-                                                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="lastName" class="text-light">Last Name</label>
-                                                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="mobile" class="text-light">Mobile</label>
-                                                        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="password" class="text-light">Password</label>
-                                                        <div class="input-group">
-                                                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                                                            <div class="input-group-append">
-                                                                <button class="btn btn-outline-secondary" type="button" id="showPassword">Show</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="email" class="text-light">Email</label>
-                                                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="registeredDate" class="text-light">Registered Date</label>
-                                                        <input type="date" class="form-control" id="registeredDate">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="addressLine1" class="text-light">Address Line 1</label>
-                                                        <input type="text" class="form-control" id="addressLine1" placeholder="Enter your address line 1">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="addressLine2" class="text-light">Address Line 2</label>
-                                                        <input type="text" class="form-control" id="addressLine2" placeholder="Enter your address line 2">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="province" class="text-light">Province</label>
-                                                        <select class="form-control" id="province">
-                                                            <option value="">Select Province</option>
-                                                            <!-- Add options for provinces here -->
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="district" class="text-light">District</label>
-                                                        <select class="form-control" id="district">
-                                                            <option value="">Select District</option>
-                                                            <!-- Add options for districts here -->
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="city">City</label>
-                                                        <select class="form-control " class="text-light" id="city">
-                                                            <option value="">Select City</option>
-                                                            <!-- Add options for cities here -->
-                                                        </select>
-                                                    </div>
-                                                    <div class="p-3 form-group">
-                                                        <label for="postalCode" class="text-light">Postal Code</label>
-                                                        <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
-                                                    </div>
-                                                    <div class="text-center">
-                                                        <button type="submit" class="btn btn-primary" onclick="userProfileUpdate();">Submit</button>
-                                                    </div>
-                                                </form>
+                ?>
+
+
+                <div>
+                    <input type="file" class="d-none" id="profileimg" accept="image/*" />
+                    <label for="profileimg" class="mt-5 btn upci" onclick="changeImage();">Change Image</label>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="p-4 row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card futuristic-card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="firstName" class="text-light">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="text-light">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile" class="text-light">Mobile</label>
+                                        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="text-light">Password</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button" id="showPassword">Show</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="email" class="text-light">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registeredDate" class="text-light">Registered Date</label>
+                                        <input type="date" class="form-control" id="registeredDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addressLine1" class="text-light">Address Line 1</label>
+                                        <input type="text" class="form-control" id="addressLine1" placeholder="Enter your address line 1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addressLine2" class="text-light">Address Line 2</label>
+                                        <input type="text" class="form-control" id="addressLine2" placeholder="Enter your address line 2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="province" class="text-light">Province</label>
+                                        <select class="form-control" id="province">
+                                            <option value="">Select Province</option>
+                                            <!-- Add options for provinces here -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="district" class="text-light">District</label>
+                                        <select class="form-control" id="district">
+                                            <option value="">Select District</option>
+                                            <!-- Add options for districts here -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <select class="form-control " class="text-light" id="city">
+                                            <option value="">Select City</option>
+                                            <!-- Add options for cities here -->
+                                        </select>
+                                    </div>
+                                    <div class="p-3 form-group">
+                                        <label for="postalCode" class="text-light">Postal Code</label>
+                                        <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary" onclick="userProfileUpdate();">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+</div>
+
+            <?php
+            } else {
+                ?>
+                <script>
+                    alert("You have a not account. please sign up or sign in first.");
+                    window.location.href = "sign.php";
+                </script>
+                <?php
+            }
+            ?>
+            
         </div>
     </div>
 

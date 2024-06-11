@@ -277,8 +277,8 @@ function verify() {
 
 //user profile
 
-var passwordInput = document.getElementById("password");
-var showPasswordButton = document.getElementById("showPassword");
+var passwordInput = document.getElementById("passwordup");
+var showPasswordButton = document.getElementById("showPasswordup");
 
 showPasswordButton.addEventListener("click", function() {
   if (passwordInput.type === "password") {
@@ -290,8 +290,19 @@ showPasswordButton.addEventListener("click", function() {
   }
 });
 
+function changeImage() {
+  var view = document.getElementById("viewImg");//img tag
+  var file = document.getElementById("profileimg");//file chooser
+
+  file.onchange = function () {
+      var file1 = this.files[0];
+      var url = window.URL.createObjectURL(file1);
+      view.src = url;
+  }
+
+}
 function userProfileUpdate(){
-    var
+    
 }
 
 //user management

@@ -301,7 +301,7 @@ function changeImage() {
   }
 
 }
-function updateProfile() {
+function userProfileUpdate() {
   var fname = document.getElementById("fname");
   var lname = document.getElementById("lname");
   var mobile = document.getElementById("mobile");
@@ -313,9 +313,50 @@ function updateProfile() {
   var pcode = document.getElementById("pcode");
   var image = document.getElementById("profileimg");
 
-  alert(fname.value);
 
-  
+  var f = new FormData();
+  f.append("fn", fname.value);
+  f.append("ln", lname.value);
+  f.append("m", mobile.value);
+  f.append("l1", line1.value);
+  f.append("l2", line2.value);
+  f.append("p", province.value);
+  f.append("d", district.value);
+  f.append("c", city.value);
+  f.append("pc", pcode.value);
+
+  if (image.files.length == 0) {
+
+      var confirmation = confirm("Are you sure You don't want to update Profile Image?");
+
+      if (confirmation) {
+          alert("you have not selected any image.");
+      }
+
+  } else {
+      f.append("image", image.files[0]);
+  }
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+          var t = r.responseText;
+          if (t == "success") {
+            Swal.fire({
+              title: "Successful",
+              text: "Update successfully",
+              icon: "success"
+            });
+              window.location.reload();
+          } else {
+              alert(t);
+          }
+      }
+  }
+
+  r.open("POST", "updateProfileProcess.php", true);
+  r.send(f);
 }
 
 //user management

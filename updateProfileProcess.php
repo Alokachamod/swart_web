@@ -16,7 +16,7 @@ if (isset($_SESSION["u"])) {
     $city = $_POST["c"];
     $pcode = $_POST["pc"];
 
-    if (isset($_FILES["                             image"])) {
+    if (isset($_FILES["image"])) {
         $image = $_FILES["image"];
 
         $allowed_image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
@@ -38,19 +38,19 @@ if (isset($_SESSION["u"])) {
                 $new_file_extention = ".svg";
             }
 
-            $file_name = "resource/profile_img/" . $_SESSION["u"]["fname"] . "_" . uniqid() . $new_file_extention;
+            $file_name = "resources/profile_img/" . $_SESSION["u"]["fname"] . "_" . uniqid() . $new_file_extention;
 
             move_uploaded_file($image["tmp_name"], $file_name);
 
-            $image_rs = Database::search("SELECT * FROM `profile_image` WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
+            $image_rs = Database::search("SELECT * FROM `user_img` WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
             $image_num = $image_rs->num_rows;
 
             if ($image_num == 1) {
 
-                Database::iud("UPDATE `profile_image` SET `path`='" . $file_name . "' WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
+                Database::iud("UPDATE `user_img` SET `path`='" . $file_name . "' WHERE `user_email`='" . $_SESSION["u"]["email"] . "'");
             } else {
 
-                Database::iud("INSERT INTO `profile_image` (`path`,`user_email`) VALUES ('" . $file_name . "','" . $_SESSION["u"]["email"] . "')");
+                Database::iud("INSERT INTO `user_img` (`path`,`user_email`) VALUES ('" . $file_name . "','" . $_SESSION["u"]["email"] . "')");
             }
         }
     }

@@ -529,7 +529,7 @@ body {
     transition: all .3s ease-in;
     padding-right: 30px;
     padding-left: 30px;
-    
+
 }
 
 .futuristic-card {
@@ -537,35 +537,60 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 30px;
-  }
-  
-  .form-control {
+}
+
+.form-control {
     background-color: #3c3c3c;
     border: none;
     color: #fff;
-  }
-  
-  .form-control:focus {
+}
+
+.form-control:focus {
     background-color: #4c4c4c;
     box-shadow: none;
-  }
-  
-  .btn-primary {
+}
+
+.btn-primary {
     background-color: #00bcd4;
     border-color: #00bcd4;
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: #00acc1;
     border-color: #00acc1;
-  }
-  
-  .btn-outline-secondary {
+}
+
+.btn-outline-secondary {
     color: #00bcd4;
     border-color: #00bcd4;
-  }
-  
-  .btn-outline-secondary:hover {
+}
+
+.btn-outline-secondary:hover {
     background-color: #00bcd4;
     color: #fff;
-  }
+}
+
+.upsb {
+    margin: 12px;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+        inset -5px -5px 10px #222;
+    font-family: "Damion", cursive;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    transition: 500ms;
+}
+
+.upsb:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+        inset -5px -5px 10px #444;
+    color: #d6d6d6;
+    transition: 500ms;
+}

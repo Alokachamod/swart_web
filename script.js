@@ -301,8 +301,21 @@ function changeImage() {
   }
 
 }
-function userProfileUpdate(){
-    
+function updateProfile() {
+  var fname = document.getElementById("fname");
+  var lname = document.getElementById("lname");
+  var mobile = document.getElementById("mobile");
+  var line1 = document.getElementById("line1");
+  var line2 = document.getElementById("line2");
+  var province = document.getElementById("province");
+  var district = document.getElementById("district");
+  var city = document.getElementById("city");
+  var pcode = document.getElementById("pcode");
+  var image = document.getElementById("profileimg");
+
+  alert(fname.value);
+
+  
 }
 
 //user management

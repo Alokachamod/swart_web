@@ -35,12 +35,15 @@
 
                 $email = $_SESSION["u"]["email"];
 
+                $details_rs = Database::search("SELECT * FROM `user`");
 
                 $image_rs = Database::search("SELECT * FROM `user_img` WHERE `user_email`='" . $email . "'");
 
                 $address_rs = Database::search("SELECT * FROM `user_has_address` INNER JOIN `city` ON user_has_address.city_id=city.id INNER JOIN `district` ON city.district_id=district.id INNER JOIN `province` ON district.province_id=province.id WHERE `user_email`='" . $email . "'");
-
                 
+                $data = $details_rs->fetch_assoc();
+                $image_data = $image_rs->fetch_assoc();
+                $address_data = $address_rs->fetch_assoc();
 
 
                             ?>
@@ -48,7 +51,7 @@
 <div class="col-12">
 
 <div class="bg-center col-12">
-    <div class="text-center text-white uph"> User Profile </div>
+    <div class="p-4 text-center text-white uph"> User Profile </div>
     <div>
         <div class="col-12">
             <div class="upi">
@@ -85,68 +88,166 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="firstName" class="text-light">First Name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                                        <input type="text" class="form-control" id="fname"  value="<?php echo $data["fname"]; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="lastName" class="text-light">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                                        <input type="text" class="form-control" id="lname"  value="<?php echo $data["lname"]; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile" class="text-light">Mobile</label>
-                                        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                                        <input type="tel" class="form-control" id="mobile"  value="<?php echo $data["mobile"]; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="text-light">Password</label>
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                                            <input type="password" class="form-control text-dark" id="password"  readonly value="<?php echo $data["password"]; ?>">
                                             <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="button" id="showPassword">Show</button>
+                                                <button class="btn btn-outline-secondary" type="button" id="showPasswordup">Show</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="text-light">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                        <input type="email" class="form-control text-dark" id="email"  readonly value="<?php echo $data["email"]; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="registeredDate" class="text-light">Registered Date</label>
-                                        <input type="date" class="form-control" id="registeredDate">
+                                        <input type="text" class="form-control text-dark" id="joined_date" readonly value="<?php echo $data["joined_date"]; ?>">
                                     </div>
+                                    
+                                    <?php
+
+                                            if (!empty($address_data["line1"])) {
+
+                                            ?>
+                                    
                                     <div class="form-group">
                                         <label for="addressLine1" class="text-light">Address Line 1</label>
-                                        <input type="text" class="form-control" id="addressLine1" placeholder="Enter your address line 1">
+                                        <input type="text" class="form-control" id="line1" value="<?php echo $address_data["line1"]; ?>">
                                     </div>
+                                    
+                                    <?php
+
+                                            } else {
+                                            ?>
+                                            <div class="form-group">
+                                        <label for="addressLine1" class="text-light">Address Line 1</label>
+                                        <input type="text" class="form-control" id="line1">
+                                    </div>
+                                            <?php
+                                            }
+
+                                            if (!empty($address_data["line2"])) {
+
+                                            ?>
                                     <div class="form-group">
                                         <label for="addressLine2" class="text-light">Address Line 2</label>
-                                        <input type="text" class="form-control" id="addressLine2" placeholder="Enter your address line 2">
+                                        <input type="text" class="form-control" id="line2" value="<?php echo $address_data["line2"]; ?>">
                                     </div>
+                                    <?php
+
+                                            } else {
+                                            ?>
+                                                <div class="form-group">
+                                        <label for="addressLine2" class="text-light">Address Line 2</label>
+                                        <input type="text" class="form-control" id="line2" >
+                                    </div>
+                                            
+                                            <?php
+                                            }
+
+                                            $province_rs = Database::search("SELECT * FROM `province`");
+                                            $district_rs = Database::search("SELECT * FROM `district`");
+                                            ?>
                                     <div class="form-group">
                                         <label for="province" class="text-light">Province</label>
                                         <select class="form-control" id="province">
-                                            <option value="">Select Province</option>
-                                            <!-- Add options for provinces here -->
+                                            <option value="0">Select Province</option>
+                                            <?php
+                                                    $province_num = $province_rs->num_rows;
+                                                    for ($x = 0; $x < $province_num; $x++) {
+                                                        $province_data = $province_rs->fetch_assoc();
+                                                    ?>
+                                                        <option value="<?php echo $province_data["id"]; ?>" <?php
+                                                                                                            if (!empty($address_data["province_id"])) {
+
+                                                                                                                if ($province_data["id"] == $address_data["province_id"]) {
+                                                                                                            ?>selected<?php
+                                                                                                                    }
+                                                                                                                }
+
+                                                                                                                        ?>><?php echo $province_data["province"]; ?></option>
+                                                    <?php
+                                                    }
+                                                    ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="district" class="text-light">District</label>
                                         <select class="form-control" id="district">
-                                            <option value="">Select District</option>
-                                            <!-- Add options for districts here -->
+                                            <option value="0">Select District</option>
+                                            <?php
+                                                    $district_num = $district_rs->num_rows;
+                                                    for ($x = 0; $x < $district_num; $x++) {
+                                                        $district_data = $district_rs->fetch_assoc();
+                                                    ?>
+                                                        <option value="<?php echo $district_data["id"]; ?>" <?php
+                                                                                                            if (!empty($address_data["district_id"])) {
+                                                                                                                if ($district_data["id"] == $address_data["district_id"]) {
+                                                                                                            ?>selected<?php
+                                                                                                                    }
+                                                                                                                }
+                                                                                                                        ?>><?php echo $district_data["district"]; ?>
+                                                        </option>
+                                                    <?php
+                                                    }
+                                                    ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="city">City</label>
+                                        <label for="city" class="text-light">City</label>
                                         <select class="form-control " class="text-light" id="city">
                                             <option value="">Select City</option>
-                                            <!-- Add options for cities here -->
+                                            <?php
+                                                    $city_rs = Database::search("SELECT * FROM `city`");
+                                                    $city_num = $city_rs->num_rows;
+                                                    for ($x = 0; $x < $city_num; $x++) {
+                                                        $city_data = $city_rs->fetch_assoc();
+                                                    ?>
+                                                        <option value="<?php echo $city_data["id"]; ?>" <?php
+                                                                                                        if (!empty($address_data["city_id"])) {
+                                                                                                            if ($city_data["id"] == $address_data["city_id"]) {
+                                                                                                        ?>selected<?php
+                                                                                                                }
+                                                                                                            }
+                                                                                                                    ?>><?php echo $city_data["city"]; ?></option>
+                                                    <?php
+                                                    }
+                                                    ?>
                                         </select>
                                     </div>
+                                    <?php
+
+                                            if (!empty($address_data["postal_code"])) {
+                                            ?>
                                     <div class="p-3 form-group">
                                         <label for="postalCode" class="text-light">Postal Code</label>
-                                        <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
+                                        <input type="text" class="form-control" id="pcode" value="<?php echo $address_data["postal_code"]; ?>">
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary" onclick="userProfileUpdate();">Submit</button>
+                                    <?php
+                                            } else {
+                                            ?>
+                                            <div class="p-3 form-group">
+                                        <label for="postalCode" class="text-light">Postal Code</label>
+                                        <input type="text" class="form-control" id="postalCode" >
+                                    </div>
+                                            <?php
+                                            }
+
+                                            ?>
+                                    <div class="text-center col-12">
+                                        <button type="button" class="upsb" onclick="userProfileUpdate();">Submit</button>
                                     </div>
                                 </form>
                             </div>

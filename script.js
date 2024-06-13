@@ -361,67 +361,10 @@ function userProfileUpdate() {
 
 //user management
 
-document.addEventListener("DOMContentLoaded", () => {
-  const userTableBody = document.getElementById('userTableBody');
-  const userForm = document.getElementById('userForm');
-  let users = [];
 
-  function renderUsers() {
-      userTableBody.innerHTML = '';
-      users.forEach((user, index) => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-              <td>${index + 1}</td>
-              <td>${user.name}</td>
-              <td>${user.email}</td>
-              <td>${user.role}</td>
-              <td>
-                  <button class="btn btn-warning btn-sm" onclick="editUser(${index})">Edit</button>
-                  <button class="btn btn-danger btn-sm" onclick="deleteUser(${index})">Delete</button>
-              </td>
-          `;
-          userTableBody.appendChild(row);
-      });
-  }
 
-  function addUser(user) {
-      users.push(user);
-      renderUsers();
-  }
 
-  function editUser(index) {
-      const user = users[index];
-      document.getElementById('userName').value = user.name;
-      document.getElementById('userEmail').value = user.email;
-      document.getElementById('userRole').value = user.role;
-      $('#userModal').modal('show');
 
-      userForm.onsubmit = function (event) {
-          event.preventDefault();
-          users[index] = {
-              name: document.getElementById('userName').value,
-              email: document.getElementById('userEmail').value,
-              role: document.getElementById('userRole').value,
-          };
-          $('#userModal').modal('hide');
-          renderUsers();
-      };
-  }
 
-  function deleteUser(index) {
-      users.splice(index, 1);
-      renderUsers();
-  }
 
-  userForm.onsubmit = function (event) {
-      event.preventDefault();
-      const newUser = {
-          name: document.getElementById('userName').value,
-          email: document.getElementById('userEmail').value,
-          role: document.getElementById('userRole').value,
-      };
-      addUser(newUser);
-      $('#userModal').modal('hide');
-      userForm.reset();
-  };
-});
+

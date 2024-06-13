@@ -1,9 +1,12 @@
 <?php
 
 session_start();
+
 include "connection.php";
 
 if (isset($_SESSION["au"])) {
+    $data = $_SESSION["au"];
+
 ?>
 
 <!DOCTYPE html>
@@ -16,69 +19,59 @@ if (isset($_SESSION["au"])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="container-fluid">
+<span class="navbar-text offset-1">
+                    Welcome, <h4 id="username"><?php echo $_SESSION["au"]["fname"]; ?></h4>
+                </span>
+</div>
 <?php
 include "adminnav.php"
 ?>
-<div class="container mt-5">
-        
-        <div class="card">
-            <div class="card-header">
-                <button id="addUserBtn" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add User</button>
-            </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="userTableBody">
-                    
-                    </tbody>
-                </table>
-            </div>
+ <div class="container mt-5">
+        <div class="mb-4 d-flex justify-content-between align-items-center">
+            <h2>Manage Users</h2>
+            <button class="btn btn-primary">Add User</button>
         </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">ROLE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="avatar1.png" class="mr-2 rounded-circle" alt="Avatar" width="40">
+                            <div>
+                                <strong>Grant Siders</strong> <span class="text-muted">(you)</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>gsiders@heliacare.com</td>
+                    <td>Super Admin</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Back</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <!-- User Modal -->
-    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="userModalLabel">Add User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="userForm">
-                        <div class="form-group">
-                            <label for="userName">Name</label>
-                            <input type="text" class="form-control" id="userName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userEmail">Email</label>
-                            <input type="email" class="form-control" id="userEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userRole">Role</label>
-                            <select class="form-control" id="userRole" required>
-                                <option>Admin</option>
-                                <option>User</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -88,9 +81,7 @@ include "adminnav.php"
 </html>
 
 <?php
-
 } else {
-    header("location:index.php");
+    echo ("You are Not a valid user");
 }
-
 ?>

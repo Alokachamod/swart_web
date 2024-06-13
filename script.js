@@ -361,8 +361,36 @@ function userProfileUpdate() {
 
 //user management
 
+function blockUser(email) {
 
+  var request = new XMLHttpRequest;
 
+  request.onreadystatechange = function () {
+      if (request.readyState == 4) {
+          var response = request.responseText;
+
+          if (response == "Blocked") {
+
+              document.getElementById("ub" + email).innerHTML = "Unblock";
+              document.getElementById("ub" + email).classList = "btn btn-success";
+
+          } else if (response == "Unblocked") {
+
+              document.getElementById("ub" + email).innerHTML = "Block";
+              document.getElementById("ub" + email).classList = "btn btn-danger";
+
+          } else {
+
+              alert(response);
+
+          }
+      }
+  };
+
+  request.open("GET", "blockUserProcess.php?email=" + email, true);
+  request.send();
+
+}
 
 
 

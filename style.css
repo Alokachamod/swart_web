@@ -448,6 +448,17 @@ body {
     }
 }
 
+.ant {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tba {
+    background-color: #1c1c1c;
+    height: 5vh;
+}
+
 
 
 
@@ -593,4 +604,43 @@ body {
         inset -5px -5px 10px #444;
     color: #d6d6d6;
     transition: 500ms;
+}
+
+.containerum {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerum .pagination {
+    position: relative;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    border-radius: 2px;
+}
+
+.containerum .pagination li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.containerum .pagination li a {
+    position: relative;
+    padding: 20px 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.containerum .pagination li a:hover {
+    background: rgba(255, 255, 255, 0.2);
 }

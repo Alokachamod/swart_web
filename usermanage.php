@@ -9,79 +9,177 @@ if (isset($_SESSION["au"])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swart industries</title>
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container-fluid">
-<span class="navbar-text offset-1">
-                    Welcome, <h4 id="username"><?php echo $_SESSION["au"]["fname"]; ?></h4>
-                </span>
-</div>
-<?php
-include "adminnav.php"
-?>
- <div class="container mt-5">
-        <div class="mb-4 d-flex justify-content-between align-items-center">
-            <h2>Manage Users</h2>
-            <button class="btn btn-primary">Add User</button>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swart industries</title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="adminBody">
+        <div class="tba">
+            <span class="text-center text-light navbar-text ">
+                <p class="ant">Welcome, <?php echo $_SESSION["au"]["fname"]; ?></p>
+            </span>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">NAME</th>
-                    <th scope="col">EMAIL</th>
-                    <th scope="col">ROLE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="avatar1.png" class="mr-2 rounded-circle" alt="Avatar" width="40">
-                            <div>
-                                <strong>Grant Siders</strong> <span class="text-muted">(you)</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>gsiders@heliacare.com</td>
-                    <td>Super Admin</td>
-                </tr>
-                
-            </tbody>
-        </table>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Back</a>
+        <?php
+        include "adminnav.php"
+        ?>
+        <div class="container mt-5">
+            <div class="mb-4 d-flex justify-content-between align-items-center">
+                <h2 class="text-light">Manage Users</h2>
+                <button class="btn btn-primary">Add User</button>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">NAME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">MOBILE</th>
+                        <th scope="col">JOINED DATE</th>
+                        <th scope="col">ACTONS</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $query = "SELECT * FROM `user`";
+                $pageno;
+
+                if (isset($_GET["page"])) {
+                    $pageno = $_GET["page"];
+                } else {
+                    $pageno = 1;
+                }
+
+                $user_rs = Database::search($query);
+                $user_num = $user_rs->num_rows;
+
+                $results_per_page = 16;
+                $number_of_pages = ceil($user_num / $results_per_page);
+
+                $page_results = ($pageno - 1) * $results_per_page;
+                $selected_rs =  Database::search($query . " LIMIT " . $results_per_page . " OFFSET " . $page_results . "");
+
+                $selected_num = $selected_rs->num_rows;
+
+                for ($x = 0; $x < $selected_num; $x++) {
+                    $selected_data = $selected_rs->fetch_assoc();
+
+                    $img_rs = Database::search("SELECT * FROM `user_img` WHERE `user_email` = '" . $selected_data["email"] . "' ");
+                    $img_data = $img_rs->fetch_assoc();
+
+                ?>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <?php
+
+                                    if (empty($img_data["path"])) {
+                                    ?>
+
+                                        <img src="resources\profile_pic.png" class="rounded-circle" style="height: 40px; " />
+
+
+                                    <?php
+
+                                    } else {
+                                    ?>
+
+                                        <img src="<?php echo ($img_data["path"]); ?>" class="rounded-circle" style="height: 40px;" />
+
+                                    <?php
+                                    }
+
+
+                                    ?>
+                                    <div>
+                                        <strong><?php echo ($selected_data["fname"] . " " . $selected_data["lname"]); ?></strong>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><?php echo ($selected_data["email"]); ?></td>
+                            <td><?php echo ($selected_data["mobile"]); ?></td>
+                            <td><?php echo ($selected_data["joined_date"]); ?></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <?php
+
+                                    if ($selected_data["status"] == "1") {
+
+                                    ?>
+                                        <button type="button" class="btn btn-success" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Active</button>
+                                    <?php
+
+                                    } else {
+
+                                    ?>
+                                        <button type="button" class="btn btn-success" id="ub<?php echo ($selected_data['email']); ?>">Inactive</button>
+                                    <?php
+
+                                    }
+
+
+                                    ?>
+                                    <button type="button" class="btn btn-warning">kick</button>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+            </table>
+        <?php
+
+                }
+
+        ?>
+
+        <!--pagination-->
+        <div class="containerum">
+            <ul class="pagination">
+                <li>
+                    <a href="#">Prev</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">Next</a>
                 </li>
             </ul>
-        </nav>
-    </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
 
 <?php
 } else {
-    echo ("You are Not a valid user");
+    echo "You are Not a valid user";
 }
 ?>

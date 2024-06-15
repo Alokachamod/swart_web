@@ -35,7 +35,7 @@ if (isset($_SESSION["au"])) {
         <div class="container mt-5">
             <div class="mb-4 d-flex justify-content-between align-items-center">
                 <h2 class="text-light">Manage Users</h2>
-                <button class="btn btn-primary">Add User</button>
+                
             </div>
             <div>
                 <table class="table table-striped">
@@ -145,7 +145,7 @@ if (isset($_SESSION["au"])) {
                             <a href="<?php if ($pageno <= 1) {
                                             echo ("#");
                                         } else {
-                                            echo ("manageUsers.php?page=" . $pageno - 1);
+                                            echo ("usermanage.php?page=" . $pageno - 1);
                                         }
                                         ?>" aria-label="Previous"">Prev</a>
                         </li>
@@ -156,13 +156,13 @@ if (isset($_SESSION["au"])) {
                             if ($x == $pageno) {
                         ?>
                                 <li>
-                                    <a href="<?php echo "manageUsers.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
                                 </li>
                             <?php
                             } else {
                             ?>
                                 <li >
-                                    <a href="<?php echo "manageUsers.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
                                 </li>
                         <?php
                             }
@@ -174,7 +174,7 @@ if (isset($_SESSION["au"])) {
                             <a href="<?php if ($pageno >= $number_of_pages) {
                                                                 echo ("#");
                                                             } else {
-                                                                echo "manageUsers.php?page=" . ($pageno + 1);
+                                                                echo "usermanage.php?page=" . ($pageno + 1);
                                                             } ?>">Next</a>
                         </li>
                     </ul>

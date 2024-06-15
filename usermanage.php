@@ -35,20 +35,20 @@ if (isset($_SESSION["au"])) {
         <div class="container mt-5">
             <div class="mb-4 d-flex justify-content-between align-items-center">
                 <h2 class="text-light">Manage Users</h2>
-                
+
             </div>
             <div>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">PROFILE PICTURE</th>
-                            <th scope="col">NAME</th>
-                            <th scope="col">EMAIL</th>
-                            <th scope="col">MOBILE</th>
-                            <th scope="col">JOINED DATE</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
+                <div>
+                    <div class="p-4">
+                        <div class="d-flex">
+                            <div scope="col" class="col-2 text-light">PROFILE PICTURE</div>
+                            <div scope="col" class="col-2 text-light">NAME</div>
+                            <div scope="col" class="col-3 text-light">EMAIL</div>
+                            <div scope="col" class="col-1 text-light">MOBILE</div>
+                            <div scope="col" class="col-2 text-light">JOINED DATE</div>
+                            <div scope="col" class="col-2 text-light">Status</div>
+                        </div>
+                    </div>
                     <?php
 
                     $query = "SELECT * FROM `user`";
@@ -78,76 +78,88 @@ if (isset($_SESSION["au"])) {
                         $img_data = $img_rs->fetch_assoc();
 
                     ?>
-                        <tbody>
-                            <tr>
-                                <td scope="row">
-                                    <?php
 
-                                    if (empty($img_data["path"])) {
-                                    ?>
+                        <div class="p-2 d-flex border-bottom">
+                            <div class=" col-2" >
+                                <?php
 
-                                        <img src="resources\profile_pic.png" class="rounded-circle" style="height: 40px; margin-left: 80px;" />
+                                if (empty($img_data["path"])) {
+                                ?>
 
-
-                                    <?php
-
-                                    } else {
-                                    ?>
-
-                                        <img src="<?php echo ($img_data["path"]); ?>" class="rounded-circle" style="height: 40px; margin-left: 80px;" />
-
-                                    <?php
-                                    }
+                                    <img src="resources\profile_pic.png" class="rounded-circle umt" style="height: 40px;  " />
 
 
-                                    ?>
-                                </td>
-                                <td><?php echo $selected_data["fname"] . "" . $selected_data["lname"] ?></td>
-                                <td><?php echo $selected_data["email"] ?></td>
-                                <td><?php echo $selected_data["mobile"] ?></td>
-                                <td><?php echo $selected_data["joined_date"] ?></td>
-                                <td> <?php
+                                <?php
 
-                                        if ($selected_data["status_id"] == "1") {
+                                } else {
+                                ?>
 
-                                        ?>
+                                    <img src="<?php echo ($img_data["path"]); ?>" class="rounded-circle umt" style="height: 40px;"  />
 
-                                        <button class="btn btn-danger" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
-
-                                    <?php
-
-                                        } else {
-
-                                    ?>
-
-                                        <button class="btn btn-success" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Unblock</button>
-
-                                    <?php
-
-                                        }
+                                <?php
+                                }
 
 
-                                    ?>
-                                </td>
-                            </tr>
-                            
-                        </tbody>
-                </table>
+                                ?>
+                            </div>
+                            <div class=" col-2 text-light" ><?php echo $selected_data["fname"] . "  " . $selected_data["lname"] ?></div>
+                            <div class=" col-3 text-light"><?php echo $selected_data["email"] ?></div>
+                            <div class=" col-1 text-light"><?php echo $selected_data["mobile"] ?></div>
+                            <div class=" col-2 text-light"><?php echo $selected_data["joined_date"] ?></div>
+                            <div class=" col-2 text-light"> <?php
+
+                                                            if ($selected_data["status_id"] == "1") {
+
+                                                            ?>
+
+                                    <button class="btn btn-danger" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
+
+                                <?php
+
+                                                            } else {
+
+                                ?>
+
+                                    <button class="btn btn-success" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Unblock</button>
+
+                                <?php
+
+                                                            }
+
+
+                                ?>
+                            </div>
+                            <div class=" col-2 text-light"> <?php
+
+                                                            if ($selected_data["status_id"] == "1") {
+
+                                                            ?>
+
+                                    <button class="btn btn-danger" id="ud<?php echo ($selected_data['email']); ?>" onclick="deleteUser('<?php echo ($selected_data['email']); ?>');">Kick</button>
+
+                                <?php
+                                        } else
+                                ?>
+                            </div>
+                        </div>
+
+                </div>
+
             <?php
 
                     }
 
             ?>
             <!--pegination-->
-                <div class="containerum">
-                    <ul class="pagination">
-                        <li>
-                            <a href="<?php if ($pageno <= 1) {
-                                            echo ("#");
-                                        } else {
-                                            echo ("usermanage.php?page=" . $pageno - 1);
-                                        }
-                                        ?>" aria-label="Previous"">Prev</a>
+            <div class="containerum">
+                <ul class="pagination">
+                    <li>
+                        <a href="<?php if ($pageno <= 1) {
+                                        echo ("#");
+                                    } else {
+                                        echo ("usermanage.php?page=" . $pageno - 1);
+                                    }
+                                    ?>" aria-label="Previous"">Prev</a>
                         </li>
                         
                         <?php
@@ -156,29 +168,29 @@ if (isset($_SESSION["au"])) {
                             if ($x == $pageno) {
                         ?>
                                 <li>
-                                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
-                                </li>
-                            <?php
+                                    <a href=" <?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                    </li>
+                <?php
                             } else {
-                            ?>
-                                <li >
-                                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
-                                </li>
-                        <?php
+                ?>
+                    <li>
+                        <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                    </li>
+            <?php
                             }
                         }
 
-                        ?>
-                        
-                        <li>
-                            <a href="<?php if ($pageno >= $number_of_pages) {
-                                                                echo ("#");
-                                                            } else {
-                                                                echo "usermanage.php?page=" . ($pageno + 1);
-                                                            } ?>">Next</a>
-                        </li>
-                    </ul>
-                </div>
+            ?>
+
+            <li>
+                <a href="<?php if ($pageno >= $number_of_pages) {
+                                echo ("#");
+                            } else {
+                                echo "usermanage.php?page=" . ($pageno + 1);
+                            } ?>">Next</a>
+            </li>
+                </ul>
+            </div>
             </div>
 
 

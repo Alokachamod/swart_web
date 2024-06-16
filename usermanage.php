@@ -23,7 +23,7 @@ if (isset($_SESSION["au"])) {
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     </head>
 
-    <body class="adminBody" onload="loadUser();">
+    <body class="adminBody">
         <div class="tba">
             <span class="text-center text-light navbar-text ">
                 <p class="ant">Welcome, <?php echo $_SESSION["au"]["fname"]; ?></p>
@@ -112,7 +112,7 @@ if (isset($_SESSION["au"])) {
 
                                                             ?>
 
-                                    <button class="btn btn-danger" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
+                                    <button class="btn btn-danger m-0" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
 
                                 <?php
 
@@ -135,7 +135,7 @@ if (isset($_SESSION["au"])) {
 
                                                             ?>
 
-                                    <button class="btn btn-danger" id="ud<?php echo ($selected_data['email']); ?>" onclick="deleteUser('<?php echo ($selected_data['email']); ?>');">Kick</button>
+                                    <button class="btn btn-danger" id="ud<?php echo ($selected_data['email']); ?>" onclick="userDelete('<?php echo ($selected_data['email']); ?>');">Kick</button>
 
                                 <?php
                                         } else

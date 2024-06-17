@@ -280,7 +280,7 @@ function verify() {
 var passwordInput = document.getElementById("passwordup");
 var showPasswordButton = document.getElementById("showPasswordup");
 
-showPasswordButton.addEventListener("click", function() {
+showPasswordButton.addEventListener("click", function () {
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
     showPasswordButton.textContent = "Hide";
@@ -291,15 +291,14 @@ showPasswordButton.addEventListener("click", function() {
 });
 
 function changeImage() {
-  var view = document.getElementById("viewImg");//img tag
-  var file = document.getElementById("profileimg");//file chooser
+  var view = document.getElementById("viewImg"); //img tag
+  var file = document.getElementById("profileimg"); //file chooser
 
   file.onchange = function () {
-      var file1 = this.files[0];
-      var url = window.URL.createObjectURL(file1);
-      view.src = url;
-  }
-
+    var file1 = this.files[0];
+    var url = window.URL.createObjectURL(file1);
+    view.src = url;
+  };
 }
 function userProfileUpdate() {
   var fname = document.getElementById("fname");
@@ -313,7 +312,6 @@ function userProfileUpdate() {
   var pcode = document.getElementById("pcode");
   var image = document.getElementById("profileimg");
 
-
   var f = new FormData();
   f.append("fn", fname.value);
   f.append("ln", lname.value);
@@ -326,34 +324,34 @@ function userProfileUpdate() {
   f.append("pc", pcode.value);
 
   if (image.files.length == 0) {
+    var confirmation = confirm(
+      "Are you sure You don't want to update Profile Image?"
+    );
 
-      var confirmation = confirm("Are you sure You don't want to update Profile Image?");
-
-      if (confirmation) {
-          alert("you have not selected any image.");
-      }
-
+    if (confirmation) {
+      alert("you have not selected any image.");
+    }
   } else {
-      f.append("image", image.files[0]);
+    f.append("image", image.files[0]);
   }
 
   var r = new XMLHttpRequest();
 
   r.onreadystatechange = function () {
-      if (r.readyState == 4) {
-          var t = r.responseText;
-          if (t == "success") {
-            Swal.fire({
-              title: "Successful",
-              text: "Update successfully",
-              icon: "success"
-            });
-              window.location.reload();
-          } else {
-              alert(t);
-          }
+    if (r.readyState == 4) {
+      var t = r.responseText;
+      if (t == "success") {
+        Swal.fire({
+          title: "Successful",
+          text: "Update successfully",
+          icon: "success",
+        });
+        window.location.reload();
+      } else {
+        alert(t);
       }
-  }
+    }
+  };
 
   r.open("POST", "updateProfileProcess.php", true);
   r.send(f);
@@ -362,41 +360,33 @@ function userProfileUpdate() {
 //user management
 
 function blockUser(email) {
+  var request = new XMLHttpRequest();
 
-    var request = new XMLHttpRequest;
+  request.onreadystatechange = function () {
+    if (request.readyState == 4) {
+      var response = request.responseText;
 
-    request.onreadystatechange = function () {
-        if (request.readyState == 4) {
-            var response = request.responseText;
+      if (response == "Blocked") {
+        document.getElementById("ub" + email).innerHTML = "Unblock";
+        document.getElementById("ub" + email).classList = "btn btn-success";
+      } else if (response == "Unblocked") {
+        document.getElementById("ub" + email).innerHTML = "Block";
+        document.getElementById("ub" + email).classList = "btn btn-danger";
+      } else {
+        alert(response);
+      }
+    }
+  };
 
-            if (response == "Blocked") {
-
-                document.getElementById("ub" + email).innerHTML = "Unblock";
-                document.getElementById("ub" + email).classList = "btn btn-success";
-
-            } else if (response == "Unblocked") {
-
-                document.getElementById("ub" + email).innerHTML = "Block";
-                document.getElementById("ub" + email).classList = "btn btn-danger";
-
-            } else {
-
-                alert(response);
-
-            }
-        }
-    };
-
-    request.open("GET", "blockUserProcess.php?email=" + email, true);
-    request.send();
-
+  request.open("GET", "blockUserProcess.php?email=" + email, true);
+  request.send();
 }
 
 function userDelete(email) {
   if (confirm("Are you sure you want to delete this user?")) {
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function() {
+    request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {
         var response = request.responseText;
         if (response === "deleted") {
@@ -415,3 +405,44 @@ function userDelete(email) {
   }
 }
 
+//product management
+function addpr() {
+  window.location = "addProduct.php";
+}
+
+//add product
+
+function addProduct() {
+  var productForm = document.getElementById("Form");
+  var title = document.getElementById("title");
+  var description = document.getElementById("description");
+  var price = document.getElementById("price");
+  var qty = document.getElementById("qty");
+  var image1 = document.getElementById("image1");
+  var image2 = document.getElementById("image2");
+  var image3 = document.getElementById("image3");
+
+  var formData = new FormData();
+  formData.append("t", title.value);
+  formData.append("d", description.value);
+  formData.append("p", price.value);
+  formData.append("q", qty.value);
+  formData.append("i1", image1.files[0]);
+  formData.append("i2", image2.files[0]);
+  formData.append("image3", image3.files[0]);
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      if (response == "success") {
+        alert(response);
+      } else {
+        alert("product add faild.");
+      }
+    }
+  };
+  request.open("POST", "addProductProcess.php", true);
+  request.send(form);
+}

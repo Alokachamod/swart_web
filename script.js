@@ -422,27 +422,5 @@ function addProduct() {
   var image2 = document.getElementById("image2");
   var image3 = document.getElementById("image3");
 
-  var formData = new FormData();
-  formData.append("t", title.value);
-  formData.append("d", description.value);
-  formData.append("p", price.value);
-  formData.append("q", qty.value);
-  formData.append("i1", image1.files[0]);
-  formData.append("i2", image2.files[0]);
-  formData.append("image3", image3.files[0]);
-
-  var request = new XMLHttpRequest();
-
-  request.onreadystatechange = function () {
-    if ((request.status == 200) & (request.readyState == 4)) {
-      var response = request.responseText;
-      if (response == "success") {
-        alert(response);
-      } else {
-        alert("product add faild.");
-      }
-    }
-  };
-  request.open("POST", "addProductProcess.php", true);
-  request.send(form);
+ alert("ok");
 }

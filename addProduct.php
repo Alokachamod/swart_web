@@ -35,7 +35,7 @@
                 <input type="file" class="mt-2 form-control" id="productImage2" accept="image/*">
                 <input type="file" class="mt-2 form-control" id="productImage3" accept="image/*">
             </div>
-            <button type="submit" class="btn btn-primary" onclick="addProduct();">Add Product</button>
+            <button  class="btn btn-primary" onclick="addProduct();">Add Product</button>
         </form>
 
     </div>

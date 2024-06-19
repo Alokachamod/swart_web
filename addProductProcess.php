@@ -15,9 +15,9 @@ if(empty($title)){
     echo ("Please Enter a Title");
 }else if(strlen($title) >= 200){
     echo ("Title should have lover than 100 characters");
-}else if(empty($desc)){
+}else if(empty($description)){
     echo ("Please Enter a Description.");
-}else if(strlen($desc)>=2000){
+}else if(strlen($description)>=2000){
     echo ("Description should have lover than 100 characters");
 }else if(empty($qty)){
     echo ("Please Enter the Quantity.");
@@ -36,7 +36,8 @@ if(empty($title)){
     $d->setTimezone($tz);
     $date = $d->format("Y-m-d H:i:s");
 
-    Database::iud("INSERT INTO `product`(`title`,`description`,`price`,update_date`,`qty`,`availability_id`) VALUES ('".$title."','".$description."','".$price."','".$date."','".$qty."','1'')");
+    Database::iud("INSERT INTO `product`(`title`,`description`,`price`,`update_date`,`qty`,`availability_id`)
+                VALUES ('".$title."','".$description."','".$price."','".$date."','".$qty."','1')");
 
     echo ("Product saved successfully");
 
@@ -68,7 +69,7 @@ if(empty($title)){
                         $new_img_extention = ".svg";
                     }
 
-                    $file_name = "resources\product_img".$title."_".$x."_".uniqid().$new_img_extention;
+                    $file_name = "resources/product_img".$title."_".$x."_".uniqid().$new_img_extention;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
 
                     Database::iud("INSERT INTO `images`(`path`,`product_id`) VALUES ('".$file_name."','".$product_id."')");

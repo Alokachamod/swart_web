@@ -145,7 +145,7 @@ if (isset($_SESSION["au"])) {
                                 if (empty($img_data["path"])) {
                                 ?>
 
-                                    <img src="resources\profile_pic.png" class="rounded-circle umt" style="height: 40px;  " />
+                                    <img src="resources\empty image.png" class="rounded-circle umt" style="height: 40px;  " />
 
 
                                 <?php

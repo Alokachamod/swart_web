@@ -406,21 +406,72 @@ function userDelete(email) {
 }
 
 //product management
-function addpr() {
-  window.location = "addProduct.php";
+function apmodelb() {
+  var addProductModal =
+          document.getElementById("apmodel");
+        pm = new bootstrap.Modal(addProductModal);
+        pm.show();
 }
 
 //add product
+function changeProductImage() {
+
+  var image = document.getElementById("imageuploader");
+
+  image.onchange = function () {
+
+      var file_count = image.files.length;
+
+      if (file_count <= 3) {
+
+          for (var x = 0; x < file_count; x++) {
+              var file = this.files[x];
+              var url = window.URL.createObjectURL(file);
+
+              document.getElementById("i" + x).src = url;
+          }
+
+      } else {
+          alert("please select 3 or less than 3 images");
+      }
+
+  }
+}
 
 function addProduct() {
-  var productForm = document.getElementById("Form");
   var title = document.getElementById("title");
-  var description = document.getElementById("description");
+  var desc = document.getElementById("desc");
   var price = document.getElementById("price");
   var qty = document.getElementById("qty");
-  var image1 = document.getElementById("image1");
-  var image2 = document.getElementById("image2");
-  var image3 = document.getElementById("image3");
+  var image = document.getElementById("imageuploader");
 
- alert("ok");
+  var f = new FormData();
+
+  f.append("t", title.value);
+  f.append("d", desc.value);
+  f.append("p", price.value);
+  f.append("q", qty.value);
+
+  var file_count = image.files.length;
+
+  for (var x = 0; x < file_count; x++) {
+      f.append("image" + x, image.files[x]);
+  }
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+          var t = r.responseText;
+          if (t == "Product image saved successfully") {
+              window.location.reload();
+          } else {
+              alert(t);
+          }
+      }
+  }
+
+  r.open("POST", "addProductProcess.php", true);
+  r.send(f);
 }
+

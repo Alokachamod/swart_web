@@ -551,13 +551,12 @@ body {
 }
 
 .form-control {
-    background-color: #3c3c3c;
     border: none;
     color: #fff;
 }
 
 .form-control:focus {
-    background-color: #4c4c4c;
+    
     box-shadow: none;
 }
 
@@ -682,4 +681,15 @@ body {
     100% {
      box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
     }
+   }
+
+
+   .apbtn{
+    width: 10vw;
+    background-color: #007bff;
+    justify-content: center;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+
    }

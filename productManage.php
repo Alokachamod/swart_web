@@ -36,7 +36,63 @@ if (isset($_SESSION["au"])) {
             <div class="mb-4 d-flex justify-content-between align-items-center">
                 <h2 class="text-light">Manage product</h2>
                 <div>
-                    <button class="pmbutton" onclick="addpr();"> Add Product</button>
+                    <button class="pmbutton" onclick="apmodelb();"> Add Product</button>
+                </div>
+                <div class="modal" tabindex="-1" id="apmodel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Product</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <label for="form-label fw-bold ">Title</label>
+                                    <input type="text" class="form-control" id="title">
+                                </div>
+                                <div>
+                                <div class="col-12">
+                                            <label class="form-label  " >Description</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <textarea cols="30" rows="15" class="form-control" id="desc"></textarea>
+                                        </div>
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Price</label>
+                                    <input type="text" class="form-control" id="price">
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Qty</label>
+                                    <input type="text" class="form-control" id="qty">
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Images</label>
+                                    <div class="offset-lg-3 col-12 col-lg-6">
+                                        <div class="row">
+                                            <div class="col-4  rounded">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i0" />
+                                            </div>
+                                            <div class="col-4  rounded">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i1" />
+                                            </div>
+                                            <div class="col-4   rounded">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2" />
+                                                <div class="col-12 ">
+                                                    <input type="file" class="d-none" id="imageuploader" multiple />
+                                                    <label for="imageuploader" class="apbtn m-2 " onclick="changeProductImage();">Upload Images</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="addProduct();">Add Product</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div>
@@ -45,9 +101,9 @@ if (isset($_SESSION["au"])) {
                         <div class="d-flex">
                             <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
                             <div scope="col" class="col-2 text-light">PRODUCT ID</div>
-                            <div scope="col" class="col-3 text-light">TITLE</div>
-                            <div scope="col" class="col-1 text-light">DESCRIPTION</div>
-                            <div scope="col" class="col-2 text-light">PRICE</div>
+                            <div scope="col" class="col-2 text-light">TITLE</div>
+                            <div scope="col" class="col-3 text-light">DESCRIPTION</div>
+                            <div scope="col" class="col-1 text-light">PRICE</div>
                             <div scope="col" class="col-1 text-light">QTY</div>
                             <div scope="col" class="col-1 text-light">AVAILABILITY</div>
                         </div>

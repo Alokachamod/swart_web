@@ -100,12 +100,12 @@ if (isset($_SESSION["au"])) {
                     <div class="p-4">
                         <div class="d-flex">
                             <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
-                            <div scope="col" class="col-2 text-light">PRODUCT ID</div>
-                            <div scope="col" class="col-2 text-light">TITLE</div>
-                            <div scope="col" class="col-3 text-light">DESCRIPTION</div>
-                            <div scope="col" class="col-1 text-light">PRICE</div>
-                            <div scope="col" class="col-1 text-light">QTY</div>
-                            <div scope="col" class="col-1 text-light">AVAILABILITY</div>
+                            <div scope="col" class="col-1 text-light ">PRODUCT ID</div>
+                            <div scope="col" class="col-2 text-light offset-1">TITLE</div>
+                            <div scope="col" class="col-4 text-light  d-lg-block">DESCRIPTION</div>
+                            <div scope="col" class="col-1 text-light  d-lg-block">PRICE</div>
+                            <div scope="col" class="col-1 text-light  d-lg-block">QTY</div>
+                            <div scope="col" class="col-1 text-light  d-lg-block">AVAILABILITY</div>
                         </div>
                     </div>
                     <?php
@@ -137,9 +137,9 @@ if (isset($_SESSION["au"])) {
                         $img_data = $img_rs->fetch_assoc();
 
                     ?>
-                        <div class=" col-2 text-light"><?php echo $selected_data["id"] ?></div>
+                        
                         <div class="p-2 d-flex border-bottom">
-                            <div class=" col-2">
+                            <div class=" col-2 ">
                                 <?php
 
                                 if (empty($img_data["path"])) {
@@ -161,11 +161,12 @@ if (isset($_SESSION["au"])) {
 
                                 ?>
                             </div>
-                            <div class=" col-2 text-light"><?php echo $selected_data["title"] ?></div>
-                            <div class=" col-3 text-light"><?php echo $selected_data["description"] ?></div>
-                            <div class=" col-1 text-light"><?php echo $selected_data["price"] ?></div>
-                            <div class=" col-2 text-light"><?php echo $selected_data["qty"] ?></div>
-                            <div class=" col-2 text-light"><?php echo $selected_data["availability_id"] ?></div>
+                            <div class=" col-1 text-light "><?php echo $selected_data["id"] ?></div>
+                            <div class=" col-2 text-light offset-1"><?php echo $selected_data["title"] ?></div>
+                            <div class=" col-4 text-light  d-lg-block"><?php echo $selected_data["description"] ?></div>
+                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["price"] ?></div>
+                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["qty"] ?></div>
+                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
                         </div>
 
                 </div>

@@ -102,7 +102,7 @@ if (isset($_SESSION["au"])) {
 
                                 ?>
                             </div>
-                            <div class=" col-2 text-light" ><?php echo $selected_data["fname"] . "  " . $selected_data["lname"] ?></div>
+                            <div class=" col-2 text-light " ><?php echo $selected_data["fname"] . "  " . $selected_data["lname"] ?></div>
                             <div class=" col-3 text-light"><?php echo $selected_data["email"] ?></div>
                             <div class=" col-1 text-light"><?php echo $selected_data["mobile"] ?></div>
                             <div class=" col-2 text-light"><?php echo $selected_data["joined_date"] ?></div>

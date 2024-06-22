@@ -101,19 +101,75 @@ if (isset($_SESSION["au"])) {
                     <div class="searchpm">
                         <div class="search-boxpm col-6">
                             <div class="search-fieldpm">
-                                <input placeholder="Search..." class="inputpm" type="text">
+                                <input placeholder="Search..." class="inputpm" type="text" id="pid">
     
                             </div>
                         </div>
                     </div>
                     <div class="d-flex">
                         <div>
-                            <button class="pmbutton" onclick="apmodelb();"> Update</button>
+                            <button class="pmbutton" onclick="apmodelu();"> Update</button>
                         </div>
                         <div>
-                            <button class="pmbutton" onclick="apmodelb();"> Update</button>
+                            <button class="pmbutton" onclick="apmodeld();"> Delete</button>
                         </div>
                     </div>
+                    <div class="modal" tabindex="-1" id="pupdate">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Update Product</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <label for="form-label fw-bold ">Title</label>
+                                    <input type="text" class="form-control" id="title">
+                                </div>
+                                <div>
+                                    <div class="col-12">
+                                        <label class="form-label ">Description</label>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea cols="30" rows="15" class="form-control" id="desc"></textarea>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Price</label>
+                                    <input type="text" class="form-control" id="price">
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Qty</label>
+                                    <input type="text" class="form-control" id="qty">
+                                </div>
+                                <div>
+                                    <label for="form-label fw-bold ">Images</label>
+                                    <div class="offset-lg-3 col-12 col-lg-6">
+                                        <div class="row">
+                                            <div class="rounded col-4">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i0" />
+                                            </div>
+                                            <div class="rounded col-4">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i1" />
+                                            </div>
+                                            <div class="rounded col-4">
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2" />
+                                                <div class="col-12 ">
+                                                    <input type="file" class="d-none" id="imageuploader" multiple />
+                                                    <label for="imageuploader" class="m-2 apbtn " onclick="changeProductImage();">Upload Images</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="uproduct();">Update Product</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <div>
                     <div class="p-4">

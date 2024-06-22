@@ -475,3 +475,28 @@ function addProduct() {
   r.send(f);
 }
 
+function apmodelu(){
+  var updatedata =  document.getElementById("pid");
+
+  var f = new FormData();
+
+  f.append("pid", updatedata.value);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      var t = r.responseText;
+      if (t == "open model") {
+        var productupdatemodel =
+        document.getElementById("pupdate");
+      upm = new bootstrap.Modal(productupdatemodel);
+      upm.show();
+      } else {
+        alert(t);
+      }
+    }
+  }
+r.open("POST","updatemodelopenprocess.php",true);
+r.send(f)
+}
+

@@ -51,12 +51,12 @@ if (isset($_SESSION["au"])) {
                                     <input type="text" class="form-control" id="title">
                                 </div>
                                 <div>
-                                <div class="col-12">
-                                            <label class="form-label  " >Description</label>
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea cols="30" rows="15" class="form-control" id="desc"></textarea>
-                                        </div>
+                                    <div class="col-12">
+                                        <label class="form-label ">Description</label>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea cols="30" rows="15" class="form-control" id="desc"></textarea>
+                                    </div>
                                 </div>
                                 <div>
                                     <label for="form-label fw-bold ">Price</label>
@@ -70,17 +70,17 @@ if (isset($_SESSION["au"])) {
                                     <label for="form-label fw-bold ">Images</label>
                                     <div class="offset-lg-3 col-12 col-lg-6">
                                         <div class="row">
-                                            <div class="col-4  rounded">
+                                            <div class="rounded col-4">
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i0" />
                                             </div>
-                                            <div class="col-4  rounded">
+                                            <div class="rounded col-4">
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i1" />
                                             </div>
-                                            <div class="col-4   rounded">
+                                            <div class="rounded col-4">
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2" />
                                                 <div class="col-12 ">
                                                     <input type="file" class="d-none" id="imageuploader" multiple />
-                                                    <label for="imageuploader" class="apbtn m-2 " onclick="changeProductImage();">Upload Images</label>
+                                                    <label for="imageuploader" class="m-2 apbtn " onclick="changeProductImage();">Upload Images</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,18 +94,37 @@ if (isset($_SESSION["au"])) {
                         </div>
                     </div>
                 </div>
+
             </div>
-            <div>
+           
+                <div class="col-12 d-flex">
+                    <div class="searchpm">
+                        <div class="search-boxpm col-6">
+                            <div class="search-fieldpm">
+                                <input placeholder="Search..." class="inputpm" type="text">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div>
+                            <button class="pmbutton" onclick="apmodelb();"> Update</button>
+                        </div>
+                        <div>
+                            <button class="pmbutton" onclick="apmodelb();"> Update</button>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <div class="p-4">
                         <div class="d-flex">
                             <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
                             <div scope="col" class="col-1 text-light ">PRODUCT ID</div>
                             <div scope="col" class="col-2 text-light offset-1">TITLE</div>
-                            <div scope="col" class="col-4 text-light  d-lg-block">DESCRIPTION</div>
-                            <div scope="col" class="col-1 text-light  d-lg-block">PRICE</div>
-                            <div scope="col" class="col-1 text-light  d-lg-block">QTY</div>
-                            <div scope="col" class="col-1 text-light  d-lg-block">AVAILABILITY</div>
+                            <div scope="col" class="col-4 text-light d-none d-lg-block">DESCRIPTION</div>
+                            <div scope="col" class="col-1 text-light d-none d-lg-block">PRICE</div>
+                            <div scope="col" class="col-1 text-light d-none d-lg-block">QTY</div>
+                            <div scope="col" class="col-1 text-light d-none d-lg-block">AVAILABILITY</div>
                         </div>
                     </div>
                     <?php
@@ -137,15 +156,15 @@ if (isset($_SESSION["au"])) {
                         $img_data = $img_rs->fetch_assoc();
 
                     ?>
-                        
+
                         <div class="p-2 d-flex border-bottom">
-                            <div class=" col-2 ">
+                            <div class=" col-2">
                                 <?php
 
                                 if (empty($img_data["path"])) {
                                 ?>
 
-                                    <img src="resources\empty image.png" class="rounded-circle umt" style="height: 40px;  " />
+                                    <img src="resources\empty image.png" class="rounded umt" style="height: 150px;  " />
 
 
                                 <?php
@@ -153,7 +172,7 @@ if (isset($_SESSION["au"])) {
                                 } else {
                                 ?>
 
-                                    <img src="<?php echo ($img_data["path"]); ?>" class="rounded-circle umt" style="height: 40px;" />
+                                    <img src="<?php echo ($img_data["path"]); ?>" class="rounded umt" style="height: 150px;" />
 
                                 <?php
                                 }
@@ -161,12 +180,12 @@ if (isset($_SESSION["au"])) {
 
                                 ?>
                             </div>
-                            <div class=" col-1 text-light "><?php echo $selected_data["id"] ?></div>
+                            <div class=" col-1 text-light"><?php echo $selected_data["id"] ?></div>
                             <div class=" col-2 text-light offset-1"><?php echo $selected_data["title"] ?></div>
-                            <div class=" col-4 text-light  d-lg-block"><?php echo $selected_data["description"] ?></div>
-                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["price"] ?></div>
-                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["qty"] ?></div>
-                            <div class=" col-1 text-light  d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
+                            <div class=" col-4 text-light d-none d-lg-block"><?php echo $selected_data["description"] ?></div>
+                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["price"] ?></div>
+                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["qty"] ?></div>
+                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
                         </div>
 
                 </div>

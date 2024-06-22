@@ -41,12 +41,12 @@ if (isset($_SESSION["au"])) {
                 <div>
                     <div class="p-4">
                         <div class="d-flex">
-                            <div scope="col" class="col-2 text-light">PROFILE PICTURE</div>
-                            <div scope="col" class="col-2 text-light">NAME</div>
-                            <div scope="col" class="col-3 text-light">EMAIL</div>
-                            <div scope="col" class="col-1 text-light">MOBILE</div>
-                            <div scope="col" class="col-2 text-light">JOINED DATE</div>
-                            <div scope="col" class="col-2 text-light">Status</div>
+                            <div scope="col" class="py-2 col-2 text-light"><span>PROFILE PICTURE</span></div>
+                            <div scope="col" class="py-2 col-2 text-light"><span>NAME</span></div>
+                            <div scope="col" class="col-3 text-light d-none d-lg-block"><span>EMAIL</span></div>
+                            <div scope="col" class="col-1 text-light d-none d-lg-block"><span>MOBILE</span></div>
+                            <div scope="col" class="col-2 text-light d-none d-lg-block">JOINED DATE</div>
+                            <div scope="col" class="col-2 text-light p-lg-4"><span>action</span></div>
                         </div>
                     </div>
                     <?php
@@ -79,7 +79,7 @@ if (isset($_SESSION["au"])) {
 
                     ?>
 
-                        <div class="p-2 d-flex border-bottom">
+                        <div class="py-2 d-flex border-bottom">
                             <div class=" col-2" >
                                 <?php
 
@@ -102,17 +102,17 @@ if (isset($_SESSION["au"])) {
 
                                 ?>
                             </div>
-                            <div class=" col-2 text-light " ><?php echo $selected_data["fname"] . "  " . $selected_data["lname"] ?></div>
-                            <div class=" col-3 text-light"><?php echo $selected_data["email"] ?></div>
-                            <div class=" col-1 text-light"><?php echo $selected_data["mobile"] ?></div>
-                            <div class=" col-2 text-light"><?php echo $selected_data["joined_date"] ?></div>
+                            <div class=" col-2 text-light" ><span><?php echo $selected_data["fname"] . "  " . $selected_data["lname"] ?></span></div>
+                            <div class="py-2 col-3 text-light d-none d-lg-block"><span><?php echo $selected_data["email"] ?></span></div>
+                            <div class="py-2 col-1 text-light d-none d-lg-block"><span><?php echo $selected_data["mobile"] ?></span></div>
+                            <div class="py-2 col-2 text-light d-none d-lg-block"><span><?php echo $selected_data["joined_date"] ?></span></div>
                             <div class=" col-2 text-light"> <?php
 
                                                             if ($selected_data["status_id"] == "1") {
 
                                                             ?>
 
-                                    <button class="btn btn-danger m-0" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
+                                    <button class="m-0 btn btn-danger" id="ub<?php echo ($selected_data['email']); ?>" onclick="blockUser('<?php echo ($selected_data['email']); ?>');">Block</button>
 
                                 <?php
 

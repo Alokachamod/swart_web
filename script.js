@@ -464,6 +464,11 @@ function addProduct() {
       if (r.readyState == 4) {
           var t = r.responseText;
           if (t == "Product image saved successfully") {
+            Swal.fire({
+              title: "Successful",
+              text: "Product add successfully",
+              icon: "success",
+            });
               window.location.reload();
           } else {
               alert(t);
@@ -498,5 +503,56 @@ function apmodelu(){
   }
 r.open("POST","updatemodelopenprocess.php",true);
 r.send(f)
+}
+
+function updateProductImage() {
+
+  var image = document.getElementById("imageuploaderu");
+
+  alert(image.files.length);
+}
+
+function uproduct() {
+  var pid = document.getElementById("pid");
+  var title = document.getElementById("titleu");
+  var desc = document.getElementById("descu");
+  var price = document.getElementById("priceu");
+  var qty = document.getElementById("qtyu");
+  var image = document.getElementById("imageuploaderu");
+
+  var f = new FormData();
+
+  f.append("pid", pid.value);
+  f.append("t", title.value);
+  f.append("d", desc.value);
+  f.append("p", price.value);
+  f.append("q", qty.value);
+
+  var file_count = image.files.length;
+
+  for (var x = 0; x < file_count; x++) {
+      f.append("image" + x, image.files[x]);
+  }
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+          var t = r.responseText;
+          if (t == "Product image update successfully") {
+            Swal.fire({
+              title: "Successful",
+              text: "Update successfully",
+              icon: "success",
+            });
+              window.location.reload();
+          } else {
+              alert(t);
+          }
+      }
+  }
+
+  r.open("POST", "updateproductprocess.php", true);
+  r.send(f);
 }
 

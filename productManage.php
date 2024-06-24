@@ -124,39 +124,39 @@ if (isset($_SESSION["au"])) {
                             <div class="modal-body">
                                 <div>
                                     <label for="form-label fw-bold ">Title</label>
-                                    <input type="text" class="form-control" id="title">
+                                    <input type="text" class="form-control" id="titleu">
                                 </div>
                                 <div>
                                     <div class="col-12">
                                         <label class="form-label ">Description</label>
                                     </div>
                                     <div class="col-12">
-                                        <textarea cols="30" rows="15" class="form-control" id="desc"></textarea>
+                                        <textarea cols="30" rows="15" class="form-control" id="descu"></textarea>
                                     </div>
                                 </div>
                                 <div>
                                     <label for="form-label fw-bold ">Price</label>
-                                    <input type="text" class="form-control" id="price">
+                                    <input type="text" class="form-control" id="priceu">
                                 </div>
                                 <div>
                                     <label for="form-label fw-bold ">Qty</label>
-                                    <input type="text" class="form-control" id="qty">
+                                    <input type="text" class="form-control" id="qtyu">
                                 </div>
                                 <div>
                                     <label for="form-label fw-bold ">Images</label>
                                     <div class="offset-lg-3 col-12 col-lg-6">
                                         <div class="row">
                                             <div class="rounded col-4">
-                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i0" />
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i0u" />
                                             </div>
                                             <div class="rounded col-4">
-                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i1" />
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i1u" />
                                             </div>
                                             <div class="rounded col-4">
-                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2" />
+                                                <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2u" />
                                                 <div class="col-12 ">
-                                                    <input type="file" class="d-none" id="imageuploader" multiple />
-                                                    <label for="imageuploader" class="m-2 apbtn " onclick="changeProductImage();">Upload Images</label>
+                                                    <input type="file" class="d-none" id="imageuploaderu" multiple />
+                                                    <label for="imageuploader" class="m-2 apbtn " onclick="updateProductImage();">Upload Images</label>
                                                 </div>
                                             </div>
                                         </div>

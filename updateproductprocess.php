@@ -5,6 +5,7 @@ require "connection.php";
 
 $email = $_SESSION["au"]["email"];
 
+$product_id = $_POST["pid"];
 $title = $_POST["t"];
 $description = $_POST["d"];
 $price = $_POST["p"];
@@ -36,8 +37,7 @@ if(empty($title)){
     $d->setTimezone($tz);
     $date = $d->format("Y-m-d H:i:s");
 
-    Database::iud("INSERT INTO `product`(`title`,`description`,`price`,`update_date`,`qty`,`availability_id`)
-                VALUES ('".$title."','".$description."','".$price."','".$date."','".$qty."','1')");
+    Database::iud("UPDATE `product` SET `title`='".$title."',`description`='".$description."',`price`='".$price."',`update_date`='".$date."',`qty`='".$qty."' WHERE `id`='".$product_id."'");
 
     echo ("Product saved successfully");
 
@@ -72,7 +72,7 @@ if(empty($title)){
                     $file_name = "resources/product_img".$title."_".$x."_".uniqid().$new_img_extention;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
 
-                    Database::iud("INSERT INTO `images`(`path`,`product_id`) VALUES ('".$file_name."','".$product_id."')");
+                    Database::iud("UPDATE `product` SET `path`='".$file_name."' WHERE `id`='".$product_id."'");
 
                 }else{
                     echo ("Invalid Image type");

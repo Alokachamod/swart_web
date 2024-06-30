@@ -509,7 +509,24 @@ function updateProductImage() {
 
   var image = document.getElementById("imageuploaderu");
 
-  alert(image.files.length);
+  image.onchange = function () {
+
+      var file_count = image.files.length;
+
+      if (file_count <= 3) {
+
+          for (var x = 0; x < file_count; x++) {
+              var file = this.files[x];
+              var url = window.URL.createObjectURL(file);
+
+              document.getElementById("i" + x + "u").src = url;
+          }
+
+      } else {
+          alert("please select 3 or less than 3 images");
+      }
+
+  }
 }
 
 function uproduct() {
@@ -519,6 +536,8 @@ function uproduct() {
   var price = document.getElementById("priceu");
   var qty = document.getElementById("qtyu");
   var image = document.getElementById("imageuploaderu");
+
+  //alert(title.value);
 
   var f = new FormData();
 
@@ -539,10 +558,10 @@ function uproduct() {
   r.onreadystatechange = function () {
       if (r.readyState == 4) {
           var t = r.responseText;
-          if (t == "Product image update successfully") {
+          if (t == "Product image saved successfully") {
             Swal.fire({
-              title: "Successful",
-              text: "Update successfully",
+              title: "Updated",
+              text: "Product update successfully",
               icon: "success",
             });
               window.location.reload();
@@ -554,5 +573,28 @@ function uproduct() {
 
   r.open("POST", "updateproductprocess.php", true);
   r.send(f);
+
 }
 
+function userDelete(email) {
+  if (confirm("Are you sure you want to delete this user?")) {
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+        var response = request.responseText;
+        if (response === "deleted") {
+          alert("User deleted successfully.");
+          // Optionally, you can remove the user row from the table
+          var row = document.getElementById("row_" + email);
+          row.parentNode.removeChild(row);
+        } else {
+          alert("Failed to delete user. Error: " + response);
+        }
+      }
+    };
+
+    request.open("GET", "deleteUserProcess.php?email=" + email, true);
+    request.send();
+  }
+}

@@ -14,3 +14,4 @@ if (isset($_GET["email"])) {
         echo ("Cannot Find The User. Please Try Again Later...");
     }
 
+?>

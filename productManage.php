@@ -96,25 +96,25 @@ if (isset($_SESSION["au"])) {
                 </div>
 
             </div>
-           
-                <div class="col-12 d-flex">
-                    <div class="searchpm">
-                        <div class="search-boxpm col-6">
-                            <div class="search-fieldpm">
-                                <input placeholder="Search..." class="inputpm" type="text" id="pid">
-    
-                            </div>
+
+            <div class="col-12 d-flex">
+                <div class="searchpm">
+                    <div class="search-boxpm col-6">
+                        <div class="search-fieldpm">
+                            <input placeholder="Search..." class="inputpm" type="text" id="pid">
+
                         </div>
                     </div>
-                    <div class="d-flex">
-                        <div>
-                            <button class="pmbutton" onclick="apmodelu();"> Update</button>
-                        </div>
-                        <div>
-                            <button class="pmbutton" onclick="apmodeld();"> Delete</button>
-                        </div>
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <button class="pmbutton" onclick="apmodelu();"> Update</button>
                     </div>
-                    <div class="modal" tabindex="-1" id="pupdate">
+                    <div>
+                        <button class="pmbutton" onclick="deleteProduct();"> Delete</button>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" id="pupdate">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -128,7 +128,7 @@ if (isset($_SESSION["au"])) {
                                 </div>
                                 <div>
                                     <div class="col-12">
-                                        <label class="form-label ">Description</label>
+                                        <label class="form-label">Description</label>
                                     </div>
                                     <div class="col-12">
                                         <textarea cols="30" rows="15" class="form-control" id="descu"></textarea>
@@ -156,7 +156,7 @@ if (isset($_SESSION["au"])) {
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2u" />
                                                 <div class="col-12 ">
                                                     <input type="file" class="d-none" id="imageuploaderu" multiple />
-                                                    <label for="imageuploader" class="m-2 apbtn " onclick="updateProductImage();">Upload Images</label>
+                                                    <label for="imageuploaderu" class="m-2 apbtn " onclick="updateProductImage();">Upload Images</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,97 +170,97 @@ if (isset($_SESSION["au"])) {
                         </div>
                     </div>
                 </div>
-                </div>
-                <div>
-                    <div class="p-4">
-                        <div class="d-flex">
-                            <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
-                            <div scope="col" class="col-1 text-light ">PRODUCT ID</div>
-                            <div scope="col" class="col-2 text-light offset-1">TITLE</div>
-                            <div scope="col" class="col-4 text-light d-none d-lg-block">DESCRIPTION</div>
-                            <div scope="col" class="col-1 text-light d-none d-lg-block">PRICE</div>
-                            <div scope="col" class="col-1 text-light d-none d-lg-block">QTY</div>
-                            <div scope="col" class="col-1 text-light d-none d-lg-block">AVAILABILITY</div>
-                        </div>
+            </div>
+            <div>
+                <div class="p-4">
+                    <div class="d-flex">
+                        <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
+                        <div scope="col" class="col-1 text-light ">PRODUCT ID</div>
+                        <div scope="col" class="col-2 text-light offset-1">TITLE</div>
+                        <div scope="col" class="col-4 text-light d-none d-lg-block">DESCRIPTION</div>
+                        <div scope="col" class="col-1 text-light d-none d-lg-block">PRICE</div>
+                        <div scope="col" class="col-1 text-light d-none d-lg-block">QTY</div>
+                        <div scope="col" class="col-1 text-light d-none d-lg-block">AVAILABILITY</div>
                     </div>
-                    <?php
-
-                    $query = "SELECT * FROM `product`";
-                    $pageno;
-
-                    if (isset($_GET["page"])) {
-                        $pageno = $_GET["page"];
-                    } else {
-                        $pageno = 1;
-                    }
-
-                    $user_rs = Database::search($query);
-                    $user_num = $user_rs->num_rows;
-
-                    $results_per_page = 16;
-                    $number_of_pages = ceil($user_num / $results_per_page);
-
-                    $page_results = ($pageno - 1) * $results_per_page;
-                    $selected_rs =  Database::search($query . " LIMIT " . $results_per_page . " OFFSET " . $page_results . "");
-
-                    $selected_num = $selected_rs->num_rows;
-
-                    for ($x = 0; $x < $selected_num; $x++) {
-                        $selected_data = $selected_rs->fetch_assoc();
-
-                        $img_rs = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $selected_data["id"] . "' ");
-                        $img_data = $img_rs->fetch_assoc();
-
-                    ?>
-
-                        <div class="p-2 d-flex border-bottom">
-                            <div class=" col-2">
-                                <?php
-
-                                if (empty($img_data["path"])) {
-                                ?>
-
-                                    <img src="resources\empty image.png" class="rounded umt" style="height: 150px;  " />
-
-
-                                <?php
-
-                                } else {
-                                ?>
-
-                                    <img src="<?php echo ($img_data["path"]); ?>" class="rounded umt" style="height: 150px;" />
-
-                                <?php
-                                }
-
-
-                                ?>
-                            </div>
-                            <div class=" col-1 text-light"><?php echo $selected_data["id"] ?></div>
-                            <div class=" col-2 text-light offset-1"><?php echo $selected_data["title"] ?></div>
-                            <div class=" col-4 text-light d-none d-lg-block"><?php echo $selected_data["description"] ?></div>
-                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["price"] ?></div>
-                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["qty"] ?></div>
-                            <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
-                        </div>
-
                 </div>
+                <?php
 
-            <?php
+                $query = "SELECT * FROM `product`";
+                $pageno;
 
-                    }
+                if (isset($_GET["page"])) {
+                    $pageno = $_GET["page"];
+                } else {
+                    $pageno = 1;
+                }
 
-            ?>
-            <!--pegination-->
-            <div class="containerum">
-                <ul class="pagination">
-                    <li>
-                        <a href="<?php if ($pageno <= 1) {
-                                        echo ("#");
-                                    } else {
-                                        echo ("usermanage.php?page=" . $pageno - 1);
-                                    }
-                                    ?>" aria-label="Previous"">Prev</a>
+                $user_rs = Database::search($query);
+                $user_num = $user_rs->num_rows;
+
+                $results_per_page = 16;
+                $number_of_pages = ceil($user_num / $results_per_page);
+
+                $page_results = ($pageno - 1) * $results_per_page;
+                $selected_rs =  Database::search($query . " LIMIT " . $results_per_page . " OFFSET " . $page_results . "");
+
+                $selected_num = $selected_rs->num_rows;
+
+                for ($x = 0; $x < $selected_num; $x++) {
+                    $selected_data = $selected_rs->fetch_assoc();
+
+                    $img_rs = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $selected_data["id"] . "' ");
+                    $img_data = $img_rs->fetch_assoc();
+
+                ?>
+
+                    <div class="p-2 d-flex border-bottom">
+                        <div class=" col-2">
+                            <?php
+
+                            if (empty($img_data["path"])) {
+                            ?>
+
+                                <img src="resources\empty image.png" class="rounded umt" style="height: 150px;  " />
+
+
+                            <?php
+
+                            } else {
+                            ?>
+
+                                <img src="<?php echo ($img_data["path"]); ?>" class="rounded umt" style="height: 150px;" />
+
+                            <?php
+                            }
+
+
+                            ?>
+                        </div>
+                        <div class=" col-1 text-light"><?php echo $selected_data["id"] ?></div>
+                        <div class=" col-2 text-light offset-1"><?php echo $selected_data["title"] ?></div>
+                        <div class=" col-4 text-light d-none d-lg-block"><?php echo $selected_data["description"] ?></div>
+                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["price"] ?></div>
+                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["qty"] ?></div>
+                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
+                    </div>
+
+            </div>
+
+        <?php
+
+                }
+
+        ?>
+        <!--pegination-->
+        <div class="containerum">
+            <ul class="pagination">
+                <li>
+                    <a href="<?php if ($pageno <= 1) {
+                                    echo ("#");
+                                } else {
+                                    echo ("usermanage.php?page=" . $pageno - 1);
+                                }
+                                ?>" aria-label="Previous"">Prev</a>
                         </li>
                         
                         <?php
@@ -270,29 +270,29 @@ if (isset($_SESSION["au"])) {
                         ?>
                                 <li>
                                     <a href=" <?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
-                    </li>
-                <?php
-                            } else {
-                ?>
-                    <li>
-                        <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
-                    </li>
+                </li>
             <?php
+                            } else {
+            ?>
+                <li>
+                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                </li>
+        <?php
                             }
                         }
 
-            ?>
+        ?>
 
-            <li>
-                <a href="<?php if ($pageno >= $number_of_pages) {
-                                echo ("#");
-                            } else {
-                                echo "usermanage.php?page=" . ($pageno + 1);
-                            } ?>">Next</a>
-            </li>
-                </ul>
-            </div>
-            </div>
+        <li>
+            <a href="<?php if ($pageno >= $number_of_pages) {
+                            echo ("#");
+                        } else {
+                            echo "usermanage.php?page=" . ($pageno + 1);
+                        } ?>">Next</a>
+        </li>
+            </ul>
+        </div>
+        </div>
 
 
         </div>

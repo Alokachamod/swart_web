@@ -12,20 +12,12 @@ $price = $_POST["p"];
 $qty = $_POST["q"];
 
 
-if(empty($title)){
-    echo ("Please Enter a Title");
-}else if(strlen($title) >= 200){
+if(strlen($title) >= 200){
     echo ("Title should have lover than 100 characters");
-}else if(empty($description)){
-    echo ("Please Enter a Description.");
 }else if(strlen($description)>=2000){
     echo ("Description should have lover than 100 characters");
-}else if(empty($qty)){
-    echo ("Please Enter the Quantity.");
 }else if($qty == "0" | $qty == "e" | $qty < 0){
     echo ("Invalid input for Quantity");
-}else if(empty($price)){
-    echo ("Please Enter the Price.");
 }else if(!is_numeric($price)){
     echo ("Invalid input for Cost");
 }else{
@@ -72,7 +64,7 @@ if(empty($title)){
                     $file_name = "resources/product_img".$title."_".$x."_".uniqid().$new_img_extention;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
 
-                    Database::iud("UPDATE `product` SET `path`='".$file_name."' WHERE `id`='".$product_id."'");
+                    Database::iud("UPDATE `product` SET `path`='".$file_name."' WHERE `product_id`='".$product_id."'");
 
                 }else{
                     echo ("Invalid Image type");

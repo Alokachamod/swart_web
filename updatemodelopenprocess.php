@@ -6,7 +6,7 @@ $pid = $_POST["pid"];
 // echo($uid);
 
 if(empty($pid)){
-    echo("Please Enter Your User Id");
+    echo("Please Enter Your product Id");
 } else {
 
     $rs = Database::search("SELECT * FROM `product` WHERE `id`='" . $pid . "'");
@@ -17,7 +17,7 @@ if(empty($pid)){
 
         echo ("open model");
     } else {
-        echo ("Invalid User Id");
+        echo ("Invalid product Id");
     }
 }
 

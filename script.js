@@ -576,7 +576,7 @@ function uproduct() {
 
 }
 
-function userDelete(email) {
+function productDelete(email) {
   if (confirm("Are you sure you want to delete this user?")) {
     var request = new XMLHttpRequest();
 

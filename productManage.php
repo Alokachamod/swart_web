@@ -111,7 +111,7 @@ if (isset($_SESSION["au"])) {
                         <button class="pmbutton" onclick="apmodelu();"> Update</button>
                     </div>
                     <div>
-                        <button class="pmbutton" onclick="deleteProduct(<?php echo $selected_data["id"] ?>);"> Delete</button>
+                        <button class="pmbutton" onclick="productDelete();"> Delete</button>
                     </div>
                 </div>
                 <div class="modal" tabindex="-1" id="pupdate">

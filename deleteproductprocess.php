@@ -1,18 +1,22 @@
 <?php
 
-require "connection.php";
+include "connection.php";
 
-if (isset($_GET["email"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $productId = $_POST["productId"];
 
-    $user_email = $_GET["email"];
+    // Perform the deletion logic here
+    $deleteQuery = "DELETE FROM products WHERE id = ?";
+    $stmt = Database::$connection->prepare($deleteQuery);
+    $stmt->bind_param("i", $productId);
 
-        Database::iud("DELETE FROM `user_has_address` WHERE `user_has_address`.`user_email` = '".$user_email."' ");
-        Database::iud("DELETE FROM `user_img` WHERE `user_img`.`user_email` = '".$user_email."' ");
-        Database::iud("DELETE FROM `user` WHERE `user`.`email` = '".$user_email."' ");
-        echo ("deleted");
+    if ($stmt->execute()) {
+        echo "Product deleted successfully.";
     } else {
-        echo ("Cannot Find The User. Please Try Again Later...");
+        echo "Error deleting product: " . $stmt->error;
     }
 
-?>
+    $stmt->close();
+
+}
 ?>

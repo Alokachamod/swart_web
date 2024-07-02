@@ -110,9 +110,9 @@ if (isset($_SESSION["au"])) {
                     <div>
                         <button class="pmbutton" onclick="apmodelu();"> Update</button>
                     </div>
-                    <div>
-                        <button class="pmbutton" onclick="productDelete();"> Delete</button>
-                    </div>
+                    <!--<div>
+                        <button class="pmbutton" onclick="productDelete(ProductId);"> Delete</button>
+                    </div>-->
                 </div>
                 <div class="modal" tabindex="-1" id="pupdate">
                     <div class="modal-dialog">

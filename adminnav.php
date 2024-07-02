@@ -28,7 +28,7 @@
                         <a class="nav-link" href="usermanage.php">User Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Project Management</a>
+                        <a class="nav-link" href="projectmanage.php">Project Management</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="productManage.php">Product Management</a>

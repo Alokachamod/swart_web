@@ -576,25 +576,25 @@ function uproduct() {
 
 }
 
-function productDelete(email) {
-  if (confirm("Are you sure you want to delete this user?")) {
-    var request = new XMLHttpRequest();
+//function productDelete(productId) {
+  //if (confirm("Are you sure you want to delete this product?")) {
+    // Create a new form element
+    //var form = document.createElement("form");
+    //form.method = "POST";
+    //form.action = "deleteproductprocess.php";
 
-    request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status === 200) {
-        var response = request.responseText;
-        if (response === "deleted") {
-          alert("User deleted successfully.");
-          // Optionally, you can remove the user row from the table
-          var row = document.getElementById("row_" + email);
-          row.parentNode.removeChild(row);
-        } else {
-          alert("Failed to delete user. Error: " + response);
-        }
-      }
-    };
+    // Create a hidden input field for the product ID
+    //var productIdInput = document.createElement("input");
+    //productIdInput.type = "hidden";
+    //productIdInput.name = "productId";
+    //productIdInput.value = productId;
 
-    request.open("GET", "deleteUserProcess.php?email=" + email, true);
-    request.send();
-  }
-}
+    // Append the hidden input field to the form
+    //form.appendChild(productIdInput);
+
+    // Append the form to the document body and submit it
+    //document.body.appendChild(form);
+    //form.submit();
+ // }
+//}
+

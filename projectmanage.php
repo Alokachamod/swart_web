@@ -59,14 +59,6 @@ if (isset($_SESSION["au"])) {
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="form-label fw-bold ">Price</label>
-                                    <input type="text" class="form-control" id="price">
-                                </div>
-                                <div>
-                                    <label for="form-label fw-bold ">Qty</label>
-                                    <input type="text" class="form-control" id="qty">
-                                </div>
-                                <div>
                                     <label for="form-label fw-bold ">Images</label>
                                     <div class="offset-lg-3 col-12 col-lg-6">
                                         <div class="row">
@@ -80,7 +72,7 @@ if (isset($_SESSION["au"])) {
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2" />
                                                 <div class="col-12 ">
                                                     <input type="file" class="d-none" id="imageuploader" multiple />
-                                                    <label for="imageuploader" class="m-2 apbtn " onclick="changeProductImage();">Upload Images</label>
+                                                    <label for="imageuploader" class="m-2 apbtn " onclick="changeProjectImage();">Upload Images</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +81,7 @@ if (isset($_SESSION["au"])) {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="addProduct();">Add Product</button>
+                                <button type="button" class="btn btn-primary" onclick="addProject();">Add Product</button>
                             </div>
                         </div>
                     </div>
@@ -108,13 +100,13 @@ if (isset($_SESSION["au"])) {
                 </div>
                 <div class="d-flex">
                     <div>
-                        <button class="pmbutton" onclick="apmodelu();"> Update</button>
+                        <button class="pmbutton" onclick="prmodelu();"> Update</button>
                     </div>
                     <!--<div>
                         <button class="pmbutton" onclick="productDelete(ProductId);"> Delete</button>
                     </div>-->
                 </div>
-                <div class="modal" tabindex="-1" id="pupdate">
+                <div class="modal" tabindex="-1" id="prupdate">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -135,14 +127,6 @@ if (isset($_SESSION["au"])) {
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="form-label fw-bold ">Price</label>
-                                    <input type="text" class="form-control" id="priceu">
-                                </div>
-                                <div>
-                                    <label for="form-label fw-bold ">Qty</label>
-                                    <input type="text" class="form-control" id="qtyu">
-                                </div>
-                                <div>
                                     <label for="form-label fw-bold ">Images</label>
                                     <div class="offset-lg-3 col-12 col-lg-6">
                                         <div class="row">
@@ -156,7 +140,7 @@ if (isset($_SESSION["au"])) {
                                                 <img src="resources\photo.png" class="img-fluid" style="height: 70px;" id="i2u" />
                                                 <div class="col-12 ">
                                                     <input type="file" class="d-none" id="imageuploaderu" multiple />
-                                                    <label for="imageuploaderu" class="m-2 apbtn " onclick="updateProductImage();">Upload Images</label>
+                                                    <label for="imageuploaderu" class="m-2 apbtn " onclick="updateProjectImage();">Upload Images</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -165,7 +149,7 @@ if (isset($_SESSION["au"])) {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="uproduct();">Update Product</button>
+                                <button type="button" class="btn btn-primary" onclick="uproject();">Update Product</button>
                             </div>
                         </div>
                     </div>
@@ -174,18 +158,15 @@ if (isset($_SESSION["au"])) {
             <div>
                 <div class="p-4">
                     <div class="d-flex">
-                        <div scope="col" class="col-2 text-light">PRODUCT IMAGE</div>
-                        <div scope="col" class="col-1 text-light ">PRODUCT ID</div>
+                        <div scope="col" class="col-2 text-light">PROJECT IMAGE</div>
+                        <div scope="col" class="col-1 text-light ">PROJECT ID</div>
                         <div scope="col" class="col-2 text-light offset-1">TITLE</div>
                         <div scope="col" class="col-4 text-light d-none d-lg-block">DESCRIPTION</div>
-                        <div scope="col" class="col-1 text-light d-none d-lg-block">PRICE</div>
-                        <div scope="col" class="col-1 text-light d-none d-lg-block">QTY</div>
-                        <div scope="col" class="col-1 text-light d-none d-lg-block">AVAILABILITY</div>
                     </div>
                 </div>
                 <?php
 
-                $query = "SELECT * FROM `product`";
+                $query = "SELECT * FROM `project`";
                 $pageno;
 
                 if (isset($_GET["page"])) {
@@ -197,7 +178,7 @@ if (isset($_SESSION["au"])) {
                 $user_rs = Database::search($query);
                 $user_num = $user_rs->num_rows;
 
-                $results_per_page = 16;
+                $results_per_page = 4;
                 $number_of_pages = ceil($user_num / $results_per_page);
 
                 $page_results = ($pageno - 1) * $results_per_page;
@@ -208,7 +189,7 @@ if (isset($_SESSION["au"])) {
                 for ($x = 0; $x < $selected_num; $x++) {
                     $selected_data = $selected_rs->fetch_assoc();
 
-                    $img_rs = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $selected_data["id"] . "' ");
+                    $img_rs = Database::search("SELECT * FROM `project_img` WHERE `project_id` = '" . $selected_data["id"] . "' ");
                     $img_data = $img_rs->fetch_assoc();
 
                 ?>
@@ -239,9 +220,6 @@ if (isset($_SESSION["au"])) {
                         <div class=" col-1 text-light"><?php echo $selected_data["id"] ?></div>
                         <div class=" col-2 text-light offset-1"><?php echo $selected_data["title"] ?></div>
                         <div class=" col-4 text-light d-none d-lg-block"><?php echo $selected_data["description"] ?></div>
-                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["price"] ?></div>
-                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["qty"] ?></div>
-                        <div class=" col-1 text-light d-none d-lg-block"><?php echo $selected_data["availability_id"] ?></div>
                     </div>
 
             </div>
@@ -258,9 +236,9 @@ if (isset($_SESSION["au"])) {
                     <a href="<?php if ($pageno <= 1) {
                                     echo ("#");
                                 } else {
-                                    echo ("usermanage.php?page=" . $pageno - 1);
+                                    echo ("projectmanage.php?page=" . $pageno - 1);
                                 }
-                                ?>" aria-label="Previous"">Prev</a>
+                                ?>" aria-label="Previous">Prev</a>
                         </li>
                         
                         <?php
@@ -269,13 +247,13 @@ if (isset($_SESSION["au"])) {
                             if ($x == $pageno) {
                         ?>
                                 <li>
-                                    <a href=" <?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                                    <a href=" <?php echo "projectmanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
                 </li>
             <?php
                             } else {
             ?>
                 <li>
-                    <a href="<?php echo "usermanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
+                    <a href="<?php echo "projectmanage.php?page=" . ($x) ?>"><?php echo $x; ?></a>
                 </li>
         <?php
                             }
@@ -287,7 +265,7 @@ if (isset($_SESSION["au"])) {
             <a href="<?php if ($pageno >= $number_of_pages) {
                             echo ("#");
                         } else {
-                            echo "usermanage.php?page=" . ($pageno + 1);
+                            echo "projectmanage.php?page=" . ($pageno + 1);
                         } ?>">Next</a>
         </li>
             </ul>

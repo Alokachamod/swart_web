@@ -598,3 +598,167 @@ function uproduct() {
  // }
 //}
 
+//project management
+function aprmodelb() {
+  var addProductModal =
+          document.getElementById("aprmodel");
+        pm = new bootstrap.Modal(addProductModal);
+        pm.show();
+}
+
+//add project
+function changeProjectImage() {
+
+  var image = document.getElementById("imageuploader");
+
+  image.onchange = function () {
+
+      var file_count = image.files.length;
+
+      if (file_count <= 3) {
+
+          for (var x = 0; x < file_count; x++) {
+              var file = this.files[x];
+              var url = window.URL.createObjectURL(file);
+
+              document.getElementById("i" + x).src = url;
+          }
+
+      } else {
+          alert("please select 3 or less than 3 images");
+      }
+
+  }
+}
+
+function addProject() {
+  var title = document.getElementById("title");
+  var desc = document.getElementById("desc");
+  var image = document.getElementById("imageuploader");
+
+  var f = new FormData();
+
+  f.append("t", title.value);
+  f.append("d", desc.value);
+
+  var file_count = image.files.length;
+
+  for (var x = 0; x < file_count; x++) {
+      f.append("image" + x, image.files[x]);
+  }
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+          var t = r.responseText;
+          if (t == "Project image saved successfully") {
+            Swal.fire({
+              title: "Successful",
+              text: "Project add successfully",
+              icon: "success",
+            });
+              window.location.reload();
+          } else {
+              alert(t);
+          }
+      }
+  }
+
+  r.open("POST", "addProjectProcess.php", true);
+  r.send(f);
+}
+
+function prmodelu(){
+  var updatedata =  document.getElementById("pid");
+
+  var f = new FormData();
+
+  f.append("pid", updatedata.value);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      var t = r.responseText;
+      if (t == "open model") {
+        var productupdatemodel =
+        document.getElementById("prupdate");
+      upm = new bootstrap.Modal(productupdatemodel);
+      upm.show();
+      } else {
+        alert(t);
+      }
+    }
+  }
+r.open("POST","updateProjectModelopen.php",true);
+r.send(f)
+}
+
+function updateProjectImage() {
+
+  var image = document.getElementById("imageuploaderu");
+
+  image.onchange = function () {
+
+      var file_count = image.files.length;
+
+      if (file_count <= 3) {
+
+          for (var x = 0; x < file_count; x++) {
+              var file = this.files[x];
+              var url = window.URL.createObjectURL(file);
+
+              document.getElementById("i" + x + "u").src = url;
+          }
+
+      } else {
+          alert("please select 3 or less than 3 images");
+      }
+
+  }
+}
+
+function uproject() {
+  var pid = document.getElementById("pid");
+  var title = document.getElementById("titleu");
+  var desc = document.getElementById("descu");
+  var image = document.getElementById("imageuploaderu");
+
+  //alert(title.value);
+
+  var f = new FormData();
+
+  f.append("pid", pid.value);
+  f.append("t", title.value);
+  f.append("d", desc.value);
+  f.append("p", price.value);
+  f.append("q", qty.value);
+
+  var file_count = image.files.length;
+
+  for (var x = 0; x < file_count; x++) {
+      f.append("image" + x, image.files[x]);
+  }
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+          var t = r.responseText;
+          if (t == "Project image saved successfully") {
+            Swal.fire({
+              title: "Updated",
+              text: "Project update successfully",
+              icon: "success",
+            });
+              window.location.reload();
+          } else {
+              alert(t);
+          }
+      }
+  }
+
+  r.open("POST", "updateproductprocess.php", true);
+  r.send(f);
+
+}

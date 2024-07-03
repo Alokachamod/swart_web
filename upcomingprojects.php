@@ -1,3 +1,6 @@
+<?php
+include "connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="resources\swart new logo                           S.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+   
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
@@ -20,34 +24,72 @@
         <div class="col-12">
             <div class="text-center uch">Upcoming Projects</div>
             <div class="d-flex">
-            <div class="mb-3 card offset-1 uccard" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="resources\viva img 1.jpg" class="img-fluid rounded-start" >
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Bus Ticket System</h5>
-                            <p class="card-text"> The reason for creating this bus ticket system is to solve many problems of not giving the remaining money properly and avoiding giving the remaining money fraudulently during the daily use of bus services. </p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <?php
+
+                $project_rs = Database::search("SELECT * FROM `project`");
+                $project_num = $project_rs->num_rows;
+
+                for ($z = 0; $z < $project_num; $z++) {
+                    $project_data = $project_rs->fetch_assoc();
+
+
+
+                ?>
+                    <div class="mb-3 card offset-1 uccard" style="max-width: 540px;">
+                        <?php
+                        $image_rs = Database::search("SELECT * FROM `project_img` WHERE `project_id`='" . $project_data["id"] . "'");
+                        $image_data = $image_rs->fetch_assoc();
+                        ?>
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="<?php echo $image_data["path"]; ?>" class="img-fluid rounded-start">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $project_data["title"]; ?></h5>
+                                    <p class="card-text"> <?php echo $project_data["description"]; ?> </p>
+                                    <?php
+                                    // Assuming you have the update time stored in a variable $updateTime
+                                    $updateTime = $project_data["update_date"]; // Example update time
+
+                                    // Get the current time
+                                    $currentTime = time();
+
+                                    // Calculate the time difference in seconds
+                                    $timeDiff = $currentTime - strtotime($updateTime);
+
+                                    // Define the time units
+                                    $timeUnits = array(
+                                        'year' => 31536000,
+                                        'month' => 2592000,
+                                        'week' => 604800,
+                                        'day' => 86400,
+                                        'hour' => 3600,
+                                        'minute' => 60,
+                                        'second' => 1
+                                    );
+
+                                    // Loop through the time units and calculate the duration
+                                    $duration = '';
+                                    foreach ($timeUnits as $unit => $value) {
+                                        if ($timeDiff >= $value) {
+                                            $count = floor($timeDiff / $value);
+                                            $duration .= $count . ' ' . ($count > 1 ? $unit . 's' : $unit) . ' ';
+                                            $timeDiff = $timeDiff % $value;
+                                        }
+                                    }
+
+                                    // Trim any leading/trailing spaces from the duration string
+                                    $duration = trim($duration);
+                                    ?>
+                                    <p class="card-text"><small class="text-body-secondary">Updated <?php echo $duration; ?> ago</small></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="mb-3 card offset-1 uccard" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="resources\hand armor.jpg" class="img-fluid rounded-start" >
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Hand Armor</h5>
-                            <p class="card-text"> The reason for creating this bus ticket system is to solve many problems of not giving the remaining money properly and avoiding giving the remaining money fraudulently during the daily use of bus services. </p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

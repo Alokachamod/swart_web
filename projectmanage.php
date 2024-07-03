@@ -34,7 +34,7 @@ if (isset($_SESSION["au"])) {
         <?php include "adminnav.php"; ?>
         <div class="container mt-5">
             <div class="mb-4 d-flex justify-content-between align-items-center">
-                <h2 class="text-light">Manage product</h2>
+                <h2 class="text-light">Manage project</h2>
                 <div>
                     <button class="pmbutton" onclick="aprmodelb();"> Add Product</button>
                 </div>

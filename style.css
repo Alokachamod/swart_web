@@ -787,4 +787,16 @@ body {
     align-self: flex-start;
 }
 
+/*service tab*/
+
+.sbody{
+    height: 100vh;
+    
+}
+
+.sicon{
+    height: 200px;
+    margin-top: 20vh;
+    margin-right: 50px;
+}
 

@@ -798,5 +798,25 @@ body {
     height: 200px;
     margin-top: 20vh;
     margin-right: 50px;
+    color: #8e8e8e;
 }
 
+.sibtn{
+    background: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.sibtn:active{
+    transform: scale(0.9);
+}
+
+
+@media (max-width:768px) {
+    .sicon{
+        height: 60px;
+    margin-top: 20vh;
+    margin-right: 50px;
+    color: #8e8e8e;
+    }
+}

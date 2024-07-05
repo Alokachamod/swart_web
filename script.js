@@ -763,7 +763,12 @@ function uproject() {
 
 }
 
-//chat
+//services
 
-
+function openwarrantymodel() {
+  var warrantymodal =
+          document.getElementById("warrantymodal");
+        pm = new bootstrap.Modal(warrantymodal);
+        pm.show();
+}
 

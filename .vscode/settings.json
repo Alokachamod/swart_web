@@ -9,7 +9,8 @@
         "pmbutton",
         "pmsearch",
         "searchpm",
-        "vbody"
+        "vbody",
+        "warrantymodal"
     ],
     "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

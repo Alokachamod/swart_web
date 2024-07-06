@@ -901,5 +901,61 @@ body {
 /*contact us*/
 
 .contactustext {
+    font-family: 'Crimson Pro', serif;
     font-size: 40px;
+    color: white;
+
+}
+
+.contactbody{
+    height: 100vh;
+}
+
+.contactb{
+    margin: 30px;
+}
+
+.contact-form {
+    background: #fff;
+    margin-top: 5%;
+    border-radius: 1.5rem;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.contact-form .contact-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form .contact-image img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.contact-form h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form .btnContact {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form .btnContact:hover {
+    background: #0056b3;
 }

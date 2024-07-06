@@ -33,9 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="productManage.php">Product Management</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="adminChat.php">Chat</a>
-                    </li>
+                    
                 </ul>
                 
             </div>

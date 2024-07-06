@@ -56,10 +56,10 @@
                                 <a class="text-white nav-link hover-underline" href="about.php">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-white nav-link hover-underline" href="#">Contact Us</a>
+                                <a class="text-white nav-link hover-underline" href="contactus.php">Contact Us</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="text-white nav-link hover-underline dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="text-white nav-link hover-underline dropdown-toggle" href="userprofile.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     My Account
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

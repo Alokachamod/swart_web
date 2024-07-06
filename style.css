@@ -766,7 +766,8 @@ body {
     height: 500px;
 }
 
-#chatBox, #chatModalBody {
+#chatBox,
+#chatModalBody {
     height: 300px;
     overflow-y: scroll;
 }
@@ -789,34 +790,116 @@ body {
 
 /*service tab*/
 
-.sbody{
+.sbody {
     height: 100vh;
-    
+    overflow: hidden;
+
 }
 
-.sicon{
+.sicon {
     height: 200px;
     margin-top: 20vh;
     margin-right: 50px;
     color: #8e8e8e;
 }
 
-.sibtn{
+.sibtn {
     background: none;
     border: none;
     transition: all 0.3s ease;
 }
 
-.sibtn:active{
+.sibtn:active {
     transform: scale(0.9);
 }
 
 
 @media (max-width:768px) {
-    .sicon{
+    .sicon {
         height: 60px;
-    margin-top: 20vh;
-    margin-right: 50px;
-    color: #8e8e8e;
+        margin-top: 20vh;
+        margin-right: 50px;
+        color: #8e8e8e;
     }
+}
+
+.delivery-details {
+    text-align: left;
+}
+
+.delivery-details h2 {
+    margin-top: 20px;
+}
+
+.modal {
+    overflow: hidden;
+}
+
+.con {
+    overflow: hidden;
+}
+
+/*about us*/
+
+.ceopic {
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.ceoname {
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: white;
+}
+
+.ceotitle {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.socialicon {
+    text-align: center;
+}
+
+.aboutsec {
+    height: 100vh;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
+
+.teamtext {
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+/*contact us*/
+
+.contactustext {
+    font-size: 40px;
 }

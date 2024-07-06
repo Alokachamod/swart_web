@@ -14,11 +14,9 @@
 </head>
 
 <body class="body">
-
-
     <?php include 'header.php'; ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid con">
         <div class="col-12">
             <div class="hero-section ">
                 <video autoplay loop muted playsinline>

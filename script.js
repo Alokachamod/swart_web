@@ -772,3 +772,18 @@ function openwarrantymodel() {
         pm.show();
 }
 
+function opendelivermodel(){
+  var delivermodal =
+          document.getElementById("delivermodal");
+        pm = new bootstrap.Modal(delivermodal);
+        pm.show();
+}
+
+function openafterservicemodal(){
+  var afterservicemodal =
+          document.getElementById("afterservicemodal");
+        pm = new bootstrap.Modal(afterservicemodal);
+        pm.show();
+}
+
+

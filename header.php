@@ -53,7 +53,7 @@
                                 <a class="text-white nav-link hover-underline" href="services.php">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-white nav-link hover-underline" href="#">About Us</a>
+                                <a class="text-white nav-link hover-underline" href="about.php">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-white nav-link hover-underline" href="#">Contact Us</a>

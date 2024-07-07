@@ -29,11 +29,11 @@ if (isset($_POST["e"])) {
         $mail->Password = 'pmjz vtrm gaol fdpu';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-        $mail->setFrom($email, 'customer feedback');
-        $mail->addReplyTo($email, 'customer feedback');
-        $mail->addAddress('alokachamod3@gmail.com');
+        $mail->setFrom('alokachamod3@gmail.com', 'Admin Verification');
+        $mail->addReplyTo('alokachamod3@gmail.com', 'Admin Verification');
+        $mail->addAddress($email);
         $mail->isHTML(true);
-        $mail->Subject = 'Customer Mail';
+        $mail->Subject = 'SWART Admin Login Verification Code';
         $bodyContent = '<h1 style="color:blue;">Your Verification Code is ' . $code . '</h1>';
         $mail->Body    = $bodyContent;
 

@@ -789,36 +789,40 @@ function openafterservicemodal(){
 //contact
 
 function contactmsgsend(){
-  var name = document.getElementById("name");
-  var email = document.getElementById("email");
+  var Name = document.getElementById("name");
+  var email = document.getElement("email");
   var mobile = document.getElementById("mobile");
-  var massage = document.getElementById("msg");
+  var message = document.getElementById("msg");
 
-  //alert(name.value);
+  var form = new FormData();
 
-  var f = new FormData();
+  form.append("n", Name.value);
+  form.append("e", email.value);
+  form.append("m", mobile.value);
+  form.append("msg", message.value);
 
-  f.append("n", name.value);
-  f.append("e", email.value);
-  f.append("m", mobile.value);
-  f.append("msg", massage.value);
 
-  var r = new XMLHttpRequest();
+  var request = new XMLHttpRequest();
 
-  r.onreadystatechange = function () {
-    if (r.readyState == 4) {
-        var t = r.responseText;
-        if (t == "success") {
-          Swal.fire({
-            title: "Updated",
-            text: "Project update successfully",
-            icon: "success",
-          });
-        } else {
-            alert(t);
-        }
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      if (response == "Success") {
+        Swal.fire({
+          title: "Successful",
+          text: "Please take a look at your email to find the VERIFICATION CODE.",
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Unsuccessful",
+          text: response,
+          icon: "alert",
+        });
+      }
     }
-}
-  r.open("POST", "contactemailsendingprocess.php", true);
-  r.send(f);
+  };
+
+  request.open("POST", "contactsendprocess.php", true);
+  request.send(form);
 }

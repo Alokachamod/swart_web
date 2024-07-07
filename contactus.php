@@ -28,7 +28,7 @@
                 <div>
                     <div class="container p-5 contact-form">
                         <div class="text-center contact-image">
-                            <img src="resources/swart new logo si.png" alt="rocket_contact" style="" />
+                            <img src="resources/swart new logo si.png"   />
                         </div>
                         <form method="post">
                             <h3>Drop Us a Message</h3>

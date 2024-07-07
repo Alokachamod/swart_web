@@ -787,9 +787,38 @@ function openafterservicemodal(){
 }
 
 //contact
-document.querySelector('#contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    e.target.elements.name.value = '';
-    e.target.elements.email.value = '';
-    e.target.elements.message.value = '';
-  });
+
+function contactmsgsend(){
+  var name = document.getElementById("name");
+  var email = document.getElementById("email");
+  var mobile = document.getElementById("mobile");
+  var massage = document.getElementById("msg");
+
+  //alert(name.value);
+
+  var f = new FormData();
+
+  f.append("n", name.value);
+  f.append("e", email.value);
+  f.append("m", mobile.value);
+  f.append("msg", massage.value);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+        var t = r.responseText;
+        if (t == "success") {
+          Swal.fire({
+            title: "Updated",
+            text: "Project update successfully",
+            icon: "success",
+          });
+        } else {
+            alert(t);
+        }
+    }
+}
+  r.open("POST", "contactemailsendingprocess.php", true);
+  r.send(f);
+}

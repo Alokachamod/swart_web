@@ -36,7 +36,7 @@
             <nav class="navbar navbar-expand-lg bg-secondary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.php">
-                        <img src="resources\swart new logo s.png" alt="SWART INDUSTRIES" class="img-fluid" style="height: 70px;">
+                        <img src="resources/swart new logo si.png" alt="SWART INDUSTRIES" class="img-fluid" style="height: 70px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

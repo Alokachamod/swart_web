@@ -1,6 +1,8 @@
 <?php
 
-require "SMTP.php";
+echo("ok");
+
+/*require "SMTP.php";
 require "PHPMailer.php";
 require "Exception.php";
 
@@ -38,10 +40,10 @@ if(empty($name)){
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
         $mail->setFrom('alokachamod3@gmail.com', 'Admin Verification');
-        $mail->addReplyTo('alokachamod3@gmail.com', 'Admin Verification');
-        $mail->addAddress($email);
+        $mail->addReplyTo($email, 'Admin Verification');
+        $mail->addAddress('alokachamod3@gmail.com');
         $mail->isHTML(true);
-        $mail->Subject = 'SWART Admin Login Verification Code';
+        $mail->Subject = 'SWART Contact Us';
         $bodyContent = 
         ' '.$name.',<br>
         '.$mobile.',<br>
@@ -55,6 +57,6 @@ if(empty($name)){
             echo 'Success';
         }
     
-}
+}*/
 
 ?>

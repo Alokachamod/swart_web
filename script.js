@@ -788,36 +788,42 @@ function openafterservicemodal(){
 
 //contact
 
-function contactmsgsend(){
+function contactmsgsend() {
   var Name = document.getElementById("name");
-  var email = document.getElement("email");
+  var email = document.getElementById("email");
   var mobile = document.getElementById("mobile");
   var message = document.getElementById("msg");
 
   var form = new FormData();
-
   form.append("n", Name.value);
   form.append("e", email.value);
   form.append("m", mobile.value);
   form.append("msg", message.value);
 
-
   var request = new XMLHttpRequest();
-
+  
   request.onreadystatechange = function () {
-    if ((request.status == 200) & (request.readyState == 4)) {
-      var response = request.responseText;
-      if (response == "Success") {
-        Swal.fire({
-          title: "Successful",
-          text: "Please take a look at your email to find the VERIFICATION CODE.",
-          icon: "success",
-        });
+    if (request.readyState === 4) {
+      if (request.status === 200) {
+        var response = request.responseText;
+        if (response === "Success") {
+          Swal.fire({
+            title: "Successful",
+            text: "Please take a look at your email to find the VERIFICATION CODE.",
+            icon: "success",
+          });
+        } else {
+          Swal.fire({
+            title: "Unsuccessful",
+            text: response,
+            icon: "error", // Changed from "alert" to "error"
+          });
+        }
       } else {
         Swal.fire({
-          title: "Unsuccessful",
-          text: response,
-          icon: "alert",
+          title: "Error",
+          text: "There was an error processing your request. Please try again.",
+          icon: "error",
         });
       }
     }
@@ -826,3 +832,4 @@ function contactmsgsend(){
   request.open("POST", "contactsendprocess.php", true);
   request.send(form);
 }
+

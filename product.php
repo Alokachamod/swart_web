@@ -91,8 +91,8 @@ include "connection.php";
                             <?php
                             } else {
                             ?>
-                                <button class="mt-2 border col-12 btn btn-outline-light border-info" onclick='addTowishlist(<?php echo $product_data["id"]; ?>)'>
-                                    <i class="bi bi-heart-fill text-dark fs-5" id='heart<?php echo $product_data["id"]; ?>'></i>
+                                <button class="mt-2 border col-12 btn btn-outline-light border-info wishbutton" onclick='addTowishlist(<?php echo $product_data["id"]; ?>)'>
+                                    <i class="bi bi-heart-fill text-dark fs-5 " id='heart<?php echo $product_data["id"]; ?>'></i>
                                 </button>
                             <?php
                             }

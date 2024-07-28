@@ -959,3 +959,17 @@ body {
 .contact-form .btnContact:hover {
     background: #0056b3;
 }
+
+/*product*/
+
+.pdcard{    
+    position: relative;
+  display: flex;
+  background: #C6C6D0;
+  color: #212121;
+  box-shadow: inset 0 0 0 4px #212121;
+  transition: .6s 0.4s;
+  cursor: pointer;
+}
+
+

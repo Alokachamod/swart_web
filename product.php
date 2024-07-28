@@ -36,7 +36,7 @@ include "connection.php";
 
                 ?>
 
-                    <div class="mt-2 mb-2 card col-6 col-lg-2" style="width: 18rem;">
+                    <div class="mt-2 mb-2 card col-6 col-lg-2 pdcard" style="width: 18rem;">
 
                         <?php
 
@@ -48,7 +48,7 @@ include "connection.php";
                         <img src="<?php echo $image_data["path"]; ?>" class="mt-2 card-img-top img-thumbnail" style="height: 180px;" />
                         <div class="m-0 text-center card-body ms-0">
                             <h5 class="card-title fs-6 fw-bold"><?php echo $product_data["title"]; ?>
-                                <span class="badge bg-info">New</span>
+                               
                             </h5>
                             <span class="card-text text-primary">Rs. <?php echo $product_data["price"]; ?> .00</span> <br />
 
@@ -58,9 +58,9 @@ include "connection.php";
 
                             ?>
 
-                                <span class="card-text text-warning fw-bold">In Stock</span><br />
-                                <span class="card-text text-success fw-bold"><?php echo $product_data["qty"]; ?> Items Available</span><br /><br />
-                                <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="col-12 btn btn-success">Buy Now</a>
+                                <span class="card-text text-success fw-bold">In Stock</span><br />
+                                <span class="card-text text-dark fw-bold"><?php echo $product_data["qty"]; ?> Items Available</span><br /><br />
+                                <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="col-12 btn btn-primary">Buy Now</a>
                                 <button class="mt-2 col-12 btn btn-danger" onclick="addToCart(<?php echo $product_data['id']; ?>);">
                                     <i class="text-white bi bi-cart-plus-fill fs-5"></i>
                                 </button>
@@ -68,11 +68,11 @@ include "connection.php";
 
                             } else {
 
-                            ?>
+?>
 
                                 <span class="card-text text-danger fw-bold">Out of Stock</span> <br />
                                 <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
-                                <button class="col-12 btn btn-success disabled">Buy Now</button>
+                                <button class="col-12 btn btn-primary disabled">Buy Now</button>
                                 <button class="mt-2 col-12 btn btn-danger disabled">Add to Cart</button>
 
                             <?php

@@ -22,8 +22,8 @@
     <div class="container-fluid" >
         <div class="row">
             <div class="col-12">
-                <div class="ceopic p-4">
-                    <img src="resources/mypic.jpg" alt="image" class="rounded-circle border-primary border-4" style="height: 200px;">
+                <div class="p-4 ceopic">
+                    <img src="resources/mypic.jpg" alt="image" class="border-4 rounded-circle border-primary" style="height: 200px;">
                     <div>
                         <p class="ceoname">Aloka Chamod Champathi</p>
                         <p class="ceotitle">Founder & CEO</p>
@@ -33,18 +33,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="aboutsec col-12">
+                <div class="p-5 aboutsec >
                     <div>
                         <div class="p-5">
-                            <h3 class="teamtext text-center">Our Company Team</h3>
+                            <h3 class="text-center teamtext">Our Company Team</h3>
                         </div>
-                        <div class="row text-center">
+                        <div class="text-center row">
 
                             <!-- Team item -->
-                            <div class="col-xl-3 col-sm-6 mb-5">
-                                <div class="bg-secondary rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <div class="mb-5 col-xl-3 col-sm-6">
+                                <div class="px-4 py-5 rounded shadow-sm bg-secondary"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="mb-3 shadow-sm img-fluid rounded-circle img-thumbnail">
                                     <h5 class="mb-0">Manuella Nevoresky</h5><span class="small text-uppercase text-muted">Cofounder</span>
-                                    <ul class="social mb-0 list-inline mt-3">
+                                    <ul class="mt-3 mb-0 social list-inline">
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
@@ -54,10 +54,10 @@
                             </div><!-- End -->
 
                             <!-- Team item -->
-                            <div class="col-xl-3 col-sm-6 mb-5">
-                                <div class="bg-secondary rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-2.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <div class="mb-5 col-xl-3 col-sm-6">
+                                <div class="px-4 py-5 rounded shadow-sm bg-secondary"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-2.jpg" alt="" width="100" class="mb-3 shadow-sm img-fluid rounded-circle img-thumbnail">
                                     <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">Fulstack Developer</span>
-                                    <ul class="social mb-0 list-inline mt-3">
+                                    <ul class="mt-3 mb-0 social list-inline">
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
@@ -67,10 +67,10 @@
                             </div><!-- End -->
 
                             <!-- Team item -->
-                            <div class="col-xl-3 col-sm-6 mb-5">
-                                <div class="bg-secondary rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-1.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <div class="mb-5 col-xl-3 col-sm-6">
+                                <div class="px-4 py-5 rounded shadow-sm bg-secondary"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-1.jpg" alt="" width="100" class="mb-3 shadow-sm img-fluid rounded-circle img-thumbnail">
                                     <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">frontend Developer</span>
-                                    <ul class="social mb-0 list-inline mt-3">
+                                    <ul class="mt-3 mb-0 social list-inline">
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
@@ -80,10 +80,10 @@
                             </div><!-- End -->
 
                             <!-- Team item -->
-                            <div class="col-xl-3 col-sm-6 mb-5">
-                                <div class="bg-secondary rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-7.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <div class="mb-5 col-xl-3 col-sm-6">
+                                <div class="px-4 py-5 rounded shadow-sm bg-secondary"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-7.jpg" alt="" width="100" class="mb-3 shadow-sm img-fluid rounded-circle img-thumbnail">
                                     <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">Backend Developer</span>
-                                    <ul class="social mb-0 list-inline mt-3">
+                                    <ul class="mt-3 mb-0 social list-inline">
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
                                         <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>

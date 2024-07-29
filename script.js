@@ -832,4 +832,10 @@ function contactmsgsend() {
   request.open("POST", "contactsendprocess.php", true);
   request.send(form);
 }
+//single product veiw
 
+function loadMainImg(id) {
+    var img = document.getElementById("productImg" + id).src;
+    var main = document.getElementById("main_img");
+    main.style.backgroundImage = "url(" + img + ")";
+}

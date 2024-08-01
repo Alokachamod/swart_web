@@ -57,7 +57,7 @@ include "header.php";
                                                     $img[$x] = $image_data["path"];
                                             ?>
 
-                                                    <li class="mb-1 border d-flex flex-column justify-content-center align-items-center border-1 border-secondary">
+                                                    <li class="mb-1 d-flex flex-column justify-content-center align-items-center ">
                                                         <img src="<?php echo $img["$x"]; ?>" style="height: 200px;" class="mt-1 mb-1 img-thumbnail" id="productImg<?php echo $x; ?>" onclick="loadMainImg(<?php echo $x; ?>);" />
                                                     </li>
 
@@ -65,13 +65,13 @@ include "header.php";
                                                 }
                                             } else {
                                                 ?>
-                                                <li class="mb-1 border d-flex flex-column justify-content-center align-items-center border-1 border-secondary">
+                                                <li class="mb-1 d-flex flex-column justify-content-center align-items-center ">
                                                     <img src="resources\emptyimg.png" class="mt-1 mb-1 img-thumbnail" />
                                                 </li>
-                                                <li class="mb-1 border d-flex flex-column justify-content-center align-items-center border-1 border-secondary">
+                                                <li class="mb-1 d-flex flex-column justify-content-center align-items-center ">
                                                     <img src="resources\emptyimg.png" class="mt-1 mb-1 img-thumbnail" />
                                                 </li>
-                                                <li class="mb-1 border d-flex flex-column justify-content-center align-items-center border-1 border-secondary">
+                                                <li class="mb-1 d-flex flex-column justify-content-center align-items-center ">
                                                     <img src="resources\emptyimg.png" class="mt-1 mb-1 img-thumbnail" />
                                                 </li>
                                             <?php
@@ -82,12 +82,10 @@ include "header.php";
                                         </ul>
                                     </div>
 
-                                    <div class="order-2 col-lg-4 order-lg-1 d-none d-lg-block">
-                                        <div class="row">
-                                            <div class="border col-12 align-items-center border-1 border-secondary">
-                                                <div class="main-img" id="main_img"></div>
+                                    <div class="order-1 col-12 col-lg-10 order-lg-2">
+                                            <div>
+                                                <h2>Aloka</h2>
                                             </div>
-                                        </div>
                                     </div>
 
                                     

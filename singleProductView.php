@@ -32,7 +32,8 @@ if (isset($_GET["id"])) {
 
         </head>
 
-        <body class="upbody-bg-dark">
+        <body class="upbody bg-dark">
+            
             <div class="container-fluid">
                 <?php
                 include "header.php";
@@ -92,11 +93,11 @@ if (isset($_GET["id"])) {
                                         <h2 class="text-white offset-lg-1"><?php echo $product_data["title"]; ?></h2>
                                     </div>
                                     <br>
-                                    <div class="text-white col-6 text-center">
+                                    <div class="text-center text-white col-6">
                                         <p><?php echo $product_data["description"]; ?></p>
                                     </div>
                                     <div class="inline-flex text-white justify-item-center align-items-center d-flex offset-1">
-                                        <div class=" d-flex text-center">
+                                        <div class="text-center d-flex">
                                             <div>
                                                 <p>Qty : </p>
                                             </div>

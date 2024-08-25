@@ -1,8 +1,8 @@
 <?php
 
-echo("ok");
 
-/*require "SMTP.php";
+
+require "SMTP.php";
 require "PHPMailer.php";
 require "Exception.php";
 
@@ -36,7 +36,7 @@ if(empty($name)){
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'alokachamod3@gmail.com';
-        $mail->Password = 'pmjz vtrm gaol fdpu';
+        $mail->Password = 'pmjzvtrmgaolfdpu';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
         $mail->setFrom('alokachamod3@gmail.com', 'Admin Verification');
@@ -57,6 +57,6 @@ if(empty($name)){
             echo 'Success';
         }
     
-}*/
+}
 
 ?>
